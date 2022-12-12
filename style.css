@@ -111,13 +111,12 @@ h2{
 /*/Animaciones*/
 
 #carta4_2,#carta4_3,#carta4_1{
-    border: 10px solid rgb(255, 255, 255);
     height: 180px;
     position:absolute;
-    left: 220px;
-    margin-top: 3px;
+    left: 288px;
+    margin-top: -480px;
     animation-name: animacion_carta_2;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;  
     
@@ -246,7 +245,7 @@ label{
     
     padding-bottom: 10px;
     justify-content: center;
-    border-top: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(255, 255, 255);
     text-align: center;
     
 }
@@ -267,8 +266,10 @@ form{
 }
 #email{
     text-align: center;
-    width: 130px;
-    height: 20px;
+    margin: 5px;
+    width: 100px;
+
+    height: 15px;
     background-color: black;
     color: rgb(255, 255, 255)
 
