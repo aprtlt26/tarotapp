@@ -66,6 +66,8 @@ function tirar(){
     const sonido_c3 = document.getElementById("carta_3_a");
     fecha[5]=0;
     fecha[6]=0;
+
+    
 //////////////////////////////////////////////////////
 console.log(fecha)
     const suma_año = parseInt(fecha[0])+parseInt(fecha[1])+parseInt(fecha[2])+parseInt(fecha[3]);
@@ -82,7 +84,11 @@ console.log(fecha)
     
     console.log("AÑO:",suma_año,"Mes:",suma_mes,"Dia: ",suma_dia,"Str_dia: ",strDia_2);
 //////////////////////////////////////////////////////
-// Calulo de año
+// Calulo de añ
+
+
+
+
 if(suma_año < 22){
   
 
@@ -94,7 +100,7 @@ console.log("hola amigos soy enviar "+ suma_año)
    
     let ruta1="sonidos/"+suma_año+"s.mp3";
     sonido_c3.src=ruta1;
-    sonido_c3.setAttribute("style","background-color:blue")
+    sonido_c3.setAttribute("style","background-color:white")
 
      
     }
@@ -107,7 +113,7 @@ console.log("hola amigos soy enviar ")
         carta4_3.src=array_img[suma2_año].src;
         let ruta1="sonidos/"+suma2_año+"s.mp3";
        sonido_c3.src=ruta1;
-       sonido_c3.setAttribute("style","background-color:black")
+       sonido_c3.setAttribute("style","background-color:white")
 
      
         console.log("suma de año 2:",suma2_año)
@@ -122,7 +128,7 @@ if(str_dia > 21){
     console.log("dia",suma_dia)
     let ruta2="sonidos/"+suma_dia+"s.mp3";
     sonido_c1.src=ruta2;
-    sonido_c1.setAttribute("style","background-color:black")
+    sonido_c1.setAttribute("style","background-color:white")
     console.log(ruta2)
     
     
@@ -132,7 +138,7 @@ if(str_dia > 21){
     carta4_1.src = array_img[dia3].src;
     let ruta2="sonidos/"+dia3+"s.mp3";
     sonido_c1.src=ruta2;
-    sonido_c1.setAttribute("style","background-color:black")
+    sonido_c1.setAttribute("style","background-color:white")
     console.log(ruta2)
     
 }
@@ -158,18 +164,14 @@ let ruta3="sonidos/"+suma_mes+"s.mp3";
     carta4_2.src =array_img[str_mes].src;
     let ruta3="sonidos/"+str_mes+"s.mp3";
     sonido_c2.src=ruta3;
-    sonido_c2.setAttribute("style","background-color:green")
+    sonido_c2.setAttribute("style","background-color:white")
     console.log(ruta3)
 
     }
-
-
-
-//Cambio Cartas Mix
-
-
     
 }
+
+
 
 
 function tirar_2(){  
@@ -287,7 +289,7 @@ if(str_dia > 21){
     console.log("dia",suma_dia)
     let ruta2="sonidos/"+suma_dia+"s.mp3";
     sonido_c1.src=ruta2;
-    sonido_c1.setAttribute("style","background-color:black")
+    sonido_c1.setAttribute("style","background-color:white")
     console.log(ruta2)
     
     
@@ -328,11 +330,28 @@ let ruta3="sonidos/"+suma_mes+"s.mp3";
 
     }
 
+    var AudioContext = window.AudioContext ||
+    window.webkitAudioContext;
+  const context = new AudioContext;
+  
+  const masterVolume = context.createGain();
+  masterVolume.connect(context.destination);
+  
+  const audio = "sonidos/" ();
+  
+  src="sonidos/".connect(masterVolume);
+    
+    
+
+  
 
 
 //Cambio Cartas Mix
    
 return console.log("hola")
+
+
+
 
 }
     

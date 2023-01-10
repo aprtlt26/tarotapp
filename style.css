@@ -2,9 +2,9 @@ body{
     
     
     text-align: center;
-    padding: 0;
-    margin: 0;
-    border: 0px;
+    padding: auto;
+    margin: auto;
+    border: auto;
     
     background:rgb(255, 255, 255) ;
     animation-name: animacion_video;
@@ -32,17 +32,17 @@ position: absolute;
 #titulo{
     color: rgba(0, 0, 0, 0);
     font-size: 30px;
-    margin-top: 10px;
-    background: rgb(255, 255, 255);
+    margin-top: auto;
+    background: rgb(245, 245, 245);
     
 }
 
 
 p{
     
-    color: rgb(255, 255, 255);
+    color: rgb(245, 245, 245);
     margin-bottom:  25px;
-    margin-top: 0;
+    margin-top: auto;
     text-align: center;
     
 
@@ -113,10 +113,10 @@ h2{
 #carta4_2,#carta4_3,#carta4_1{
     height: 180px;
     position:absolute;
-    left: 288px;
-    margin-top: -480px;
+    
+    margin-top: -300px;
     animation-name: animacion_carta_2;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;  
     
@@ -126,7 +126,7 @@ h2{
 
 #carta4_1{
     animation-name: animacion_carta_2;
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;    
 }
@@ -241,7 +241,7 @@ label{
     
     justify-content: center;
     align-content: center;
-   
+   margin-top: auto;
     
     padding-bottom: 10px;
     justify-content: center;
@@ -293,7 +293,7 @@ form{
 }
 .audios{
     width: 100px;
-    display: flex;
+    display:flex ;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
@@ -305,12 +305,36 @@ audio{
     background: rgba(255, 255, 255, 0);
    
     height: 10px;
-    width: 150px;
+    
 
-    
-    
-    
 }
+
+ 
+
+.container{
+    max-width: 1400px;
+    margin:auto;
+}
+
+header{
+    padding: 25px 30px; 
+
+}
+
+header .img{
+margin: 0;
+padding: 25px 30px;
+
+}
+header.container{
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+
+
+}
+
 p{
     border: 1px solid white;
     width: 100%;
@@ -322,3 +346,4 @@ p{
     align-content: center;
     margin-top: 10px;
 }
+
