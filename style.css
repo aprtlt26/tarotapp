@@ -266,9 +266,11 @@ form{
 }
 #enviar{
     align-items: center;
-    height: 30px;
+    text-align: center;
+    height: 20px;
     background-color: black;
     color: white;
+    position: relative;
 
 }
 #info_label{
@@ -343,13 +345,13 @@ A{
 
 }
 
+
 p{
     color: rgb(0, 0, 0);
-    border:0ch;
-  text-align: justify;
-  margin: 20px;
-  text-justify: auto;
-  margin-left: -100px;
-
+    border:0;
+  text-justify: center;
+  max-width: 1300px;
+  margin: left 200px;
+  margin: :right -200px
 
 }
