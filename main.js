@@ -96,7 +96,7 @@ if(suma_año < 22){
         carta4_3.src=array_img[suma_año].src;
         console.log("Año",suma_año);
 
-console.log("hola amigos soy enviar "+ suma_año)
+console.log("enviar " + suma_año)
    
     let ruta1="sonidos/"+suma_año+"s.mp3";
     sonido_c3.src=ruta1;
@@ -106,7 +106,7 @@ console.log("hola amigos soy enviar "+ suma_año)
     }
     else{
 
-console.log("hola amigos soy enviar ")
+console.log("enviar ")
         const año2_str = suma_año.toString()
         const suma2_año = parseInt(año2_str[0])+parseInt(año2_str[1]);
         carta1.src=array_img[suma2_año].src;

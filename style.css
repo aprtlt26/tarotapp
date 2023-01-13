@@ -1,11 +1,13 @@
+
 body{
-    
-    
+    display:block;
+    flex-direction: column;
+    margin:auto;
     text-align: center;
-    padding: auto;
-    margin: auto;
-    border: auto;
-    
+    padding: 50px;
+    align-items: center;
+    width: 1000px;
+
     background:rgb(255, 255, 255) ;
     animation-name: animacion_video;
     animation-duration: 10s;
@@ -14,69 +16,14 @@ body{
     
 }
 
-video{
-position: absolute;
-   width: 1000px;
-    height: 1000px;
-   
-    
-    animation-name: animacion_video;
-    animation-duration: infinite;
-    animation-iteration-count:infinite;
-    animation-direction: alternate;
-    
-
-}
-
-
-#titulo{
-    color: rgba(0, 0, 0, 0);
-    font-size: 30px;
-    margin-top: auto;
-    background: rgb(255, 255, 255);
-    
-}
-
-
-p{
-    
-    color: rgb(255, 255, 255);
-    margin-bottom:  25px;
-    margin-top: auto;
-    text-align: center;
-    
-
-}
-h1{
-    
-    display: flex;
-    /*! flex-flow: wrap; */
-    color: white;
-    /*! text-align: center; */
-
-    /*! font-size: 25px; */
-    /*! animation: alternate; */
-    /*! margin-left:60px; */
-    
-    text-align: center;
-}
-
-
 
 
 h3{
-    color: white;
-    font-size: 15px;
-    margin: 5px;
+    height: 53px;
+padding: 5PX;
 }
-h2{
-    width: 100%;
-    margin-bottom:5px; 
-    text-align: center;
-    color: white;
-    border:1px solid white;
-    padding:10px;
-}
+   
+
 
 #carta1,#carta2,#carta3,#carta4{
     width: 110px;
@@ -85,17 +32,12 @@ h2{
     margin: 2px;
 }
 
-
-    
-    
-
 .cartas{
     margin-bottom: 15px;
-    display:inline;
+    display:flex;
     text-align: center;
     align-items: center;
-    
-        
+
 }
 
 /*/Animaciones*/
@@ -106,8 +48,6 @@ h2{
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;  
-    
-    
         
 }
 
@@ -153,22 +93,18 @@ label{
     border: 1px;
 }
 .datos{
-    margin: 5px;
     border: 3px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
 }
 #fecha{
-    margin-top: 10px;
+    margin-top: 50px;
     width: 100px;
   
     
 }
-
 
 #labesl_cartas{
     display: flex;
@@ -178,7 +114,7 @@ label{
 }
 @keyframes animacion_carta{
     from{opacity: 0;}
-    to{opacity: 1;}
+    to{opacity: 0.5;}
     
     
 }
@@ -219,10 +155,8 @@ label{
 
 .formulario{
     display: flex;
-    
     justify-content: center;
     align-content: center;
-    
     padding-bottom: 10px;
     justify-content: center;
     border-top: 1px solid rgb(255, 255, 255);
@@ -251,7 +185,6 @@ form{
     text-align: center;
     margin: 5px;
     width: 100px;
-
     height: 15px;
     background-color: rgb(250, 250, 250);
     color: rgb(0, 0, 0)
@@ -278,19 +211,22 @@ form{
     border: solid rgb(0, 0, 0) 1px;
    
 }
-.audios{
+.container.{
     width: 70px;
-    display:flex ;
-    flex-flow:nowrap;
+    display:list-item;
     align-items: center;
     justify-content: space-between;
+    
    
 }
 audio{
+    display:flex;
    border: 1px solid white;
    background: rgba(255, 255, 255, 0);
    height: 9px;
-    
+   flex-direction: column;
+   align-items: center;
+   margin: auto;
     
 
 }
@@ -300,6 +236,8 @@ audio{
 .container{
     max-width: 1400px;
     margin:auto;
+  
+    
 }
 
 header{
@@ -308,8 +246,8 @@ header{
 }
 
 header .img{
-margin: 0;
-padding: 25px 30px;
+margin:auto;
+display: flex;
 
 
 }
@@ -318,6 +256,7 @@ header.container{
     display: flex;
     flex-direction:column;
     align-items: center;
+    direction: unset ;
     
 
     
@@ -339,7 +278,7 @@ p{
 A{
   
     text-align: center;
-     color: rgb(91, 91, 3);
+     color: rgb(103, 103, 15);
      font: 400;
      font-family:Verdana, Geneva, Tahoma, sans-serif ;
 
@@ -347,11 +286,14 @@ A{
 
 
 p{
+    display: flex;
+    flex-direction: column;
     color: rgb(0, 0, 0);
     border:0;
   text-justify: center;
-  max-width: 1300px;
-  margin: left 200px;
-  margin: :right -200px
+ align-items: center;
+text-align: center;
+margin: auto;
+width: 1000px;
 
 }
