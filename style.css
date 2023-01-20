@@ -1,7 +1,6 @@
 
 body{
     display:flex;
-    flex-direction: column;
     margin:auto;
     text-align: center;
     padding: 50px;
@@ -161,7 +160,6 @@ label{
     
 }
 form{
-    
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -285,33 +283,33 @@ A{
 
 
 p{ 
-    
-    display: flex;
-    flex-direction: column;
     color: rgb(0, 0, 0);
     border:-0;
-  text-justify: center;
- align-items: center;
-text-align: center;
-font-size: small;
+  font-size: small;
 
 }
 
+em{
+    width: 500px;
 
+}
+
+em.container{
+    width: 500px;
+
+}
 
 p.container{
-    display:flex;
-    flex-direction: column;
-    text-justify: center;
-    align-items: center;
-   text-align: center;
+    display: flex 500px x 62px;
    font-size:medium;
    font-display:inherit;
+padding-top: 50px;
+
 
 
 }
 img.container{
-    margin: left 200px; }
+    align-items: center;}
 button {
     background-color: rgb(182, 49, 203);
     font-size: small;
