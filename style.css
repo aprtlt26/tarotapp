@@ -1,6 +1,7 @@
 
 body{
     display:flex;
+    flex-direction: column;
     margin:auto;
     text-align: center;
     padding: 50px;
@@ -283,6 +284,7 @@ A{
 
 
 p{ 
+    display: flex;
     color: rgb(0, 0, 0);
     border:-0;
   font-size: small;
@@ -294,16 +296,14 @@ em{
 
 }
 
-em.container{
-    width: 500px;
-
-}
 
 p.container{
     display: flex 500px x 62px;
+
    font-size:medium;
    font-display:inherit;
 padding-top: 50px;
+width: 500px;
 
 
 
