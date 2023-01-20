@@ -1,13 +1,13 @@
 
 body{
-    display:block;
+    display:flex;
     flex-direction: column;
     margin:auto;
     text-align: center;
     padding: 50px;
     align-items: center;
     width: 1000px;
-
+    border: 0px;
     background:rgb(255, 255, 255) ;
     animation-name: animacion_video;
     animation-duration: 10s;
@@ -18,10 +18,7 @@ body{
 
 
 
-h3{
-    height: 53px;
-padding: 5PX;
-}
+
    
 
 
@@ -240,6 +237,7 @@ audio{
     
 }
 
+
 header{
     padding: 25px 30px; 
 
@@ -285,15 +283,35 @@ A{
 }
 
 
-p{
+
+p{ 
+    
     display: flex;
     flex-direction: column;
     color: rgb(0, 0, 0);
-    border:0;
+    border:-0;
   text-justify: center;
  align-items: center;
 text-align: center;
-margin: auto;
-width: 1000px;
 
 }
+
+
+
+p.container{
+    display:flex;
+    flex-direction: column;
+    text-justify: center;
+    align-items: center;
+   text-align: center;
+   font-size:medium;
+   font-display:inherit;
+
+
+}
+img.container{
+    margin: left 200px; }
+button {
+    background-color: rgb(182, 49, 203);
+    font-size: small;
+  }

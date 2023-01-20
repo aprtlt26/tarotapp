@@ -1,10 +1,18 @@
 
 
 function entrar() {
+
+    
     
     location.replace("index.html")
+
+    
+    
+   
+
 }
 function tirar(){  
+    
 
     var array_img =new Array();
     array_img[0]= new Image();
@@ -330,20 +338,9 @@ let ruta3="sonidos/"+suma_mes+"s.mp3";
 
     }
 
-    var AudioContext = window.AudioContext ||
-    window.webkitAudioContext;
-  const context = new AudioContext;
-  
-  const masterVolume = context.createGain();
-  masterVolume.connect(context.destination);
-  
-  const audio = "sonidos/" ();
-  
-  src="sonidos/".connect(masterVolume);
-    
-    
 
-  
+    //audio 
+    
 
 
 //Cambio Cartas Mix
