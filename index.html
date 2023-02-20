@@ -6,29 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
+    <script src="../lib/Tone.js"></script>
     <title>Tarot Synthesizer</title>
+    
 </head>
 <body>
-    
-  
-<p id="titulo">
-   
-    <img src="images/TAROTLISTENING.jpg" width="400" height="100" />
-    
-</p>
+  <header>
+    <div class="container">
+          <img  src="images/TAROTLISTENING.jpg" width="400" height="100" /> 
+          
+         
+    </header>
 
-        
-    
+<div class="container">
     <div class="cartas">
-        
-        <div id="labesl_cartas">
+    <div id="labesl_cartas">
 
-    
    
-    </div>
+
     <div class="nombre_cartas">
       
-    </div>
+        <div class="container">
     <img id ="carta3"src="0.jpeg" alt="" name ="dia"> 
    
     <img id ="carta2"src="0.jpeg" alt="" name ="mes">
@@ -37,38 +35,30 @@
    
    
 
+    <div class="container"> 
 
-    
-</div>
 <div class="audio">
- 
-    <audio src="sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop ></audio>
-    <audio src="sonidos/" controls id="carta_2_a"  preload="auto"  autoplay loop></audio>
-    <audio src="sonidos/" controls id="carta_3_a"  preload="auto"  autoplay loop ></audio>
 
-   
-
-        
-</div>    
-
-</div> 
-  
-
-
-
+  <audio  src="sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop  ></audio>
+  <audio src="sonidos/" controls id="carta_2_a"  preload="auto" autoplay loop ></audio>
+  <audio src="sonidos/" controls id="carta_3_a"  preload="auto" autoplay loop  ></audio>
+ <div> 
+        </div>
+     
+</div>
 <div class="datos">
-<h3>date:</h3>
+
 
 <input id ="fecha"type="date" name value="date">
-<button class="btn" onclick="tirar()">Barajar</button>
+<button class="btn" onclick="tirar()">Listen</button>
 
-</div> 
-<img src="images/tarotwaves.jpg" width="1000" height="550"  />
+<div class="container">
 
-<img src="images/tablawaves.jpg" width="700" height="600" aling="center"  />
+<img src="images/tarotwaves.jpg" width="800" height="450"  />
+<img src="images/tablawaves.jpg" width="650" height="450"   />
+
 
 </div>
-
 
 <div class="copy">
 
@@ -78,24 +68,68 @@
     <img id ="carta4_3"src="0.jpeg" alt=""name="año_2">
     
    
+    <div class="container">
 
+    <p> <em> 
+
+   
+        The frequency tarot is an experience in deep listening, 
+        sonomeditation, randomness, additive synthesis and 
+        sonification.
+
+        Each septenary corresponds to a waveform.
+        you can control the volume of each sound and change the playback
+        speed to get variations.
+        <div>
+        Contact me for a personalized reading. 
+
+        
+
+    </em>
+</div>
+</div>
+        <div 
+        
+        class="container">
+
+        <A HREF="https://aprtlt.wixsite.com/aprtlt/info" target=”_blank” > 
+        
+        <em>Alfonso Pretelt</em> </A>
+
+    </em>
+    
+</div>
     
 
 <div class="formulario" id ="form">
-    <form action="https://formspree.io/f/xdobydqp" method="post">
+    
+    <form action="https://formspree.io/f/xbjervwb" method="post">
         <label for="email">Email</label>
         
-        <input type="email" name="email" id="email" placeholder="aprtlt26@gmail.com">
+        <input type="email" name="email" id="email" placeholder= "aprtlt26@gmail.com">
         <output type="text" name= "text" id="text" placeholder>
-        <button type="submit" id="enviar">Enviar</button>
-    </form>
+        <label for="msg">Consulta:</label>
+        <textarea id="msg" name="user_message"></textarea>
+        <div> 
+        <button type="submit" id="enviar">send</button>
+
+        </div>
+
+        <div class="container">
+
+        </div>
+ 
+   
+</div>
+
 
     <script>
+
 
 const $form=document.querySelector('#form');
 $form.addEventListener('submit',handleSubmit);
 
-async function handleSubmit(event){
+async function handleSubmit(event)
     event.preventDefault();
     const form= new FormData(this);
     const response =await fetch(this.action,{
@@ -110,8 +144,13 @@ async function handleSubmit(event){
         this.reset()
         alert()
     }
+    
 
-}
+  
+
+
+
+src="script.js"
 
     </script>
 </div>
