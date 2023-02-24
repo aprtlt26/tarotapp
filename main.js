@@ -1,10 +1,16 @@
 
 
 function entrar() {
+
+    
     
     location.replace("index.html")
+
+    
+
 }
 function tirar(){  
+    
 
     var array_img =new Array();
     array_img[0]= new Image();
@@ -66,6 +72,8 @@ function tirar(){
     const sonido_c3 = document.getElementById("carta_3_a");
     fecha[5]=0;
     fecha[6]=0;
+
+    
 //////////////////////////////////////////////////////
 console.log(fecha)
     const suma_año = parseInt(fecha[0])+parseInt(fecha[1])+parseInt(fecha[2])+parseInt(fecha[3]);
@@ -82,7 +90,11 @@ console.log(fecha)
     
     console.log("AÑO:",suma_año,"Mes:",suma_mes,"Dia: ",suma_dia,"Str_dia: ",strDia_2);
 //////////////////////////////////////////////////////
-// Calulo de año
+// Calulo de añ
+
+
+
+
 if(suma_año < 22){
   
 
@@ -90,24 +102,24 @@ if(suma_año < 22){
         carta4_3.src=array_img[suma_año].src;
         console.log("Año",suma_año);
 
-console.log("hola amigos soy enviar "+ suma_año)
+console.log("enviar " + suma_año)
    
     let ruta1="sonidos/"+suma_año+"s.mp3";
     sonido_c3.src=ruta1;
-    sonido_c3.setAttribute("style","background-color:blue")
+    sonido_c3.setAttribute("style","background-color:white")
 
      
     }
     else{
 
-console.log("hola amigos soy enviar ")
+console.log("enviar ")
         const año2_str = suma_año.toString()
         const suma2_año = parseInt(año2_str[0])+parseInt(año2_str[1]);
         carta1.src=array_img[suma2_año].src;
         carta4_3.src=array_img[suma2_año].src;
         let ruta1="sonidos/"+suma2_año+"s.mp3";
        sonido_c3.src=ruta1;
-       sonido_c3.setAttribute("style","background-color:black")
+       sonido_c3.setAttribute("style","background-color:white")
 
      
         console.log("suma de año 2:",suma2_año)
@@ -122,7 +134,7 @@ if(str_dia > 21){
     console.log("dia",suma_dia)
     let ruta2="sonidos/"+suma_dia+"s.mp3";
     sonido_c1.src=ruta2;
-    sonido_c1.setAttribute("style","background-color:black")
+    sonido_c1.setAttribute("style","background-color:white")
     console.log(ruta2)
     
     
@@ -132,7 +144,7 @@ if(str_dia > 21){
     carta4_1.src = array_img[dia3].src;
     let ruta2="sonidos/"+dia3+"s.mp3";
     sonido_c1.src=ruta2;
-    sonido_c1.setAttribute("style","background-color:black")
+    sonido_c1.setAttribute("style","background-color:white")
     console.log(ruta2)
     
 }
@@ -158,18 +170,14 @@ let ruta3="sonidos/"+suma_mes+"s.mp3";
     carta4_2.src =array_img[str_mes].src;
     let ruta3="sonidos/"+str_mes+"s.mp3";
     sonido_c2.src=ruta3;
-    sonido_c2.setAttribute("style","background-color:green")
+    sonido_c2.setAttribute("style","background-color:white")
     console.log(ruta3)
 
     }
-
-
-
-//Cambio Cartas Mix
-
-
     
 }
+
+
 
 
 function tirar_2(){  
@@ -287,7 +295,7 @@ if(str_dia > 21){
     console.log("dia",suma_dia)
     let ruta2="sonidos/"+suma_dia+"s.mp3";
     sonido_c1.src=ruta2;
-    sonido_c1.setAttribute("style","background-color:black")
+    sonido_c1.setAttribute("style","background-color:white")
     console.log(ruta2)
     
     
@@ -329,14 +337,21 @@ let ruta3="sonidos/"+suma_mes+"s.mp3";
     }
 
 
+    //audio 
+    
+
 
 //Cambio Cartas Mix
    
 return console.log("hola")
 
+
+
+
 }
     
     
+
 
 
 
