@@ -130,7 +130,7 @@
 const app = express();
 const http = require('http').createServer(app);
 
-app.use(express.static('public'));
+app.use(express.static('sonidos'));
 
 http.listen(3000, () => {
   console.log('Servidor web en ejecución en http://localhost:3000');
