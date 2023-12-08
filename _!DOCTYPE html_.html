@@ -5,142 +5,211 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/tone"></script>
     <script src="main.js"></script>
     <title>Tarot Synthetizer</title>
 </head>
 <body>
-    
+
+    <header>
+        <div class="container">
+              <img  src="images/TAROTLISTENING.jpg" width="400" height="100" /> 
+              
+        </header>
   
-<p id="titulo">
-    
-    <img src="images/tituloapp.jpg" width="800" height="400" />
-
-</p>
-
-        
-    
-    <div class="cartas">
-        
-        <div id="labesl_cartas">
-
-    
-   
-    </div>
-    <div class="nombre_cartas">
-      
-    </div>
-    <img id ="carta3"src="0.jpeg" alt="" name ="dia"> 
-   
-    <img id ="carta2"src="0.jpeg" alt="" name ="mes">
-   
-    <img id ="carta1"src="0.jpeg" alt="" name="año">
-   
-   
-    <script src="/path/to/howler.js"></script>
     <script>
-        var sound = new Howl({
-          src: ['sound.webm', 'sound.mp3']
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+                // Si el usuario permite el uso del micrófono, aquí puedes realizar acciones con el stream obtenido.
+                console.log("Permiso concedido para usar el micrófono.");
+            } catch (error) {
+                // Si el usuario deniega el permiso o no tiene un micrófono, aquí puedes mostrar una alerta o realizar otras acciones.
+                console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
+            }
         });
     </script>
+
+
+
+
+
+
+    <div class="container">
+        <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
+    etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.  </p>
+
    
-    
+    <section>
+
+    </section>
+
+
+        <div>
+
+        </div>
+
+
+
+<div class="cartas">
+    <div id="labesl_cartas">
+    </div>
+    <div class="nombre_cartas">
+        <div class="container">
+
+    </div>
+    <img id="carta3" src="0.jpeg" alt="" name="dia"> 
+    <img id="carta2" src="0.jpeg" alt="" name="mes">
+    <img id="carta1" src="0.jpeg" alt="" name="año">
 </div>
+
 <div class="audio">
- 
-    <audio src="sonidos" controls  id="carta_1_a"  preload="auto" autoplay loop ></audio>
-    <audio src="sonidos" controls id="carta_2_a"  preload="auto"  autoplay  loop></audio>
-    <audio src="sonidos" controls id="carta_3_a"  preload="auto"  autoplay loop ></audio>
+    <audio src="sonidos" controls  id="carta_1_a" preload="auto" autoplay loop ></audio>
+    <audio src="sonidos" controls id="carta_2_a" preload="auto" autoplay loop></audio>
+    <audio src="sonidos" controls id="carta_3_a" preload="auto" autoplay loop ></audio>
 
-    Reverb: <input type='checkbox' id='ReverbCheck'><p>
-        <button id='Start'>start</button>
-        <script>
-          var context = new AudioContext()
-          var source = new AudioNode(context,{type:'sonidos'})
-          var amplitude = new GainNode(context,{gain:0})
-          var impulse=impulseResponse(3,1)
-          var convolver = new ConvolverNode(context,{buffer:impulse})
-          source.connect(amplitude)
-          source.start()
-          Start.onclick = function() {
-            context.resume()
-            amplitude.disconnect()
-            convolver.disconnect()
-            if (ReverbCheck.checked) {
-              amplitude.connect(convolver)
-              convolver.connect(context.destination)
-            }
-            else amplitude.connect(context.destination)
-            amplitude.gain.value=1
-            amplitude.gain.setValueAtTime(0,context.currentTime+0.05)//pulse lasts 50 ms
-          }
-          function impulseResponse(duration,decay) {
-            var length = context.sampleRate * duration
-            var impulse = context.createBuffer(2,length,context.sampleRate)
-            var IR = impulse.getChannelData(0)
-            for (var i=0;i<length;i++) IR[i] = (2*Math.random()-1)*Math.pow(1-i/length,decay)
-            return impulse
-          }
-        </script>
-    
-</div>    
-
-</div> 
-  
-
-
-<div class="datos">
-<h3>date:</h3>
-
-<input id ="fecha"type="date" name value="date">
-<button class="btn" onclick="tirar()">Barajar</button>
-
-
-
-<div class="copy">
-
-    <img id ="carta4_1"src="0.jpeg" alt=""name="dia_1">
-    <img id ="carta4_2"src="0.jpeg" alt=""name="mes_2">
-    <img id ="carta4_3"src="0.jpeg" alt=""name="año_2">
-    
+    <label for="volume">Volumen general:</label>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
 
     
-</div>
-
-
-</div>
-<div class="formulario" id ="form">
-    <form action="https://formspree.io/f/xdobydqp" method="post">
-        <label for="email">Email</label>
-        
-        <input type="email" name="email" id="email" placeholder="aprtlt26@gmail.com">
-        <output type="text" name= "poem" id="poem" placeholder>
-        <button type="submit" id="enviar">Enviar</button>
-    </form>
-
     <script>
+        const volumeControl = document.getElementById('volume');
+        const carta1Audio = document.getElementById('carta_1_a');
+        const carta2Audio = document.getElementById('carta_2_a');
+        const carta3Audio = document.getElementById('carta_3_a');
+        const context = Tone.getContext();
 
-const $form=document.querySelector('#form');
-$form.addEventListener('submit',handleSubmit);
+        // Configurar los volúmenes iniciales
+        carta1Audio.volume = volumeControl.value;
+        carta2Audio.volume = volumeControl.value;
+        carta3Audio.volume = volumeControl.value;
 
-async function handleSubmit(event){
-    event.preventDefault();
-    const form= new FormData(this);
-    const response =await fetch(this.action,{
-        method:this.method,
-        body:form,
-        headers:{
-            "Accept": "aplication/jason"
-        }
+    
 
-    })
-    if (response.ok){
-        this.reset()
-        alert()
-    }
+        // Actualizar el volumen general cuando se cambia el control deslizante
+        volumeControl.addEventListener('input', function (e) {
+            const volume = e.target.value;
+            carta1Audio.volume = volume;
+            carta2Audio.volume = volume;
+            carta3Audio.volume = volume;
+        });
 
-}
-
+        // Iniciar el contexto de audio después de una acción del usuario
+        document.addEventListener('mousedown', () => {
+            if (context.state !== 'running') {
+                context.resume();
+            }
+        });
     </script>
 </div>
+
+<div class="datos">
+    <input id="fecha" type="date" name="date">
+    <button class="btn" onclick="tirar()">Barajar</button>
+    
+
+    <div class="copy">
+        <img id="carta4_1" src="0.jpeg" alt="" name="dia_1">
+        <img id="carta4_2" src="0.jpeg" alt="" name="mes_2">
+        <img id="carta4_3" src="0.jpeg" alt="" name="año_2">
+    </div> 
+
+
+ 
+</div>
+
+</div>
+
+<section>
+
+</section>
+
+
+<div class="container">
+
+    
+<p class="container">
+   <h2>  <em> *"Unveil Your Destiny for Just $1 – Discover the Hidden Messages in the Cards Today!"*  <h1> 1 USD  </h1> </h2></em>
+</p>
+  
+
+<div class="container">
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="2486UXV7QH3CA" />
+    <table>
+      <tr>
+        <td>
+          <input type="hidden" name="on0" value="Name - Tarot Question"/>
+          Name - Tarot Question
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="os0" maxLength="200" />
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="currency_code" value="USD" />
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+  </form>
+    
+
+    <form action="https://formspree.io/f/xbjervwb" method="post">
+        <label for="email">Email</label>
+        
+        <input type="email" name="email" id="email" placeholder= "aprtlt26@gmail.com">
+        <output type="text" name= "text" id="text" placeholder>
+        <label for="msg">Consulta:</label>
+        <textarea id="msg" name="user_message"></textarea>
+        <div> 
+        <button type="submit" id="enviar">send</button>
+
+        <div class="container">
+
+
+        <section>  
+
+        </section>
+        <div class="container">
+
+            <div class="row">
+              <div class="col-md-7">
+                
+            <p> <small>  Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</small></a></p>
+         
+        </container>
+        </div> <!-- Cierra el div container-fluid -->
+        <section>
+
+         
+        
+
+        </div>
+    <script>
+        const $form = document.querySelector('#form');
+        $form.addEventListener('submit', handleSubmit);
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const form = new FormData(this);
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: form,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                this.reset();
+                alert();
+            }
+        }
+    </script>
+</div>
+
 </body>
 </html>
