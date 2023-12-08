@@ -1,8 +1,4 @@
 body{
-    
-   
-
-body{
     display:flex;
     flex-direction: column;
     margin:auto;
@@ -20,11 +16,6 @@ body{
 }
 
 
-
-
-   
-
-
 #carta1,#carta2,#carta3,#carta4{
     width: 110px;
     height: 180px;
@@ -33,7 +24,7 @@ body{
 }
 
 .cartas{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display:flex;
     text-align: center;
     align-items: center;
@@ -67,10 +58,21 @@ body{
 
 
 .copy{
-    
+    display: flex;
     height: 10px;
     text-align: center;
+    position: relative;
  
+}
+
+.mensaje {
+    display: inline;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
 }
 
 .btn:active{
@@ -93,7 +95,7 @@ label{
     border: 1px;
 }
 .datos{
-    border: 3px solid white;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,14 +155,16 @@ label{
     width: 10px;
 }
 
+
 .formulario{
     display: flex;
     justify-content: center;
     align-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     justify-content: center;
     border-top: 1px solid rgb(255, 255, 255);
     text-align: center;
+    
     
 }
 form{
@@ -210,14 +214,7 @@ form{
     border: solid rgb(0, 0, 0) 1px;
    
 }
-.container.{
-    width: 70px;
-    display:list-item;
-    align-items: center;
-    justify-content: space-between;
-    
-   
-}
+
 audio{
     display:flex;
    border: 1px solid white;
@@ -233,6 +230,7 @@ audio{
  
 
 .container{
+    display:block;
     max-width: 1400px;
     margin:auto;
   
