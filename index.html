@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/tone"></script>
     <script src="main.js"></script>
-    <script src="../lib/Tone.js"></script>
-    <title>Tarot Synthesizer</title>
-    
+    <title>Tarot Synthetizer</title>
 </head>
 <body>
-  <header>
-    <div class="container">
-          <img  src="images/TAROTLISTENING.jpg" width="400" height="100" /> 
-          
-         
-    </header>
 
+    <header>
+        <div class="container">
+              <img  src="images/TAROTLISTENING.jpg" width="400" height="100" /> 
+              
+        </header>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130621743704423"
+     crossorigin="anonymous"></script>
+
+    
     <script>
         document.addEventListener("DOMContentLoaded", async function () {
             try {
@@ -34,110 +36,131 @@
     </script>
 
 
-<div>
-
-</div>
 
 
 
-<div class="container">
 
-    <p id="titulo">
+    <div class="container">
         <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
-        etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.  </p>
+    etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.  </p>
 
-    <div class="cartas">
+   
+    <section>
+
+    </section>
+
+
+        <div>
+
+        </div>
+
+
+
+<div class="cartas">
     <div id="labesl_cartas">
-
-   
-
+    </div>
     <div class="nombre_cartas">
-      
         <div class="container">
-    <img id ="carta3"src="0.jpeg" alt="" name ="dia"> 
-   
-    <img id ="carta2"src="0.jpeg" alt="" name ="mes">
-   
-    <img id ="carta1"src="0.jpeg" alt="" name="año">
-   
-   
 
-    <div class="container"> 
-
-        
-    
-
-  
-    
-    
-    
+    </div>
+    <img id="carta3" src="0.jpeg" alt="" name="dia"> 
+    <img id="carta2" src="0.jpeg" alt="" name="mes">
+    <img id="carta1" src="0.jpeg" alt="" name="año">
+</div>
 
 <div class="audio">
+    <audio src="sonidos" controls  id="carta_1_a" preload="auto" autoplay loop ></audio>
+    <audio src="sonidos" controls id="carta_2_a" preload="auto" autoplay loop></audio>
+    <audio src="sonidos" controls id="carta_3_a" preload="auto" autoplay loop ></audio>
 
-  <audio src= "sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop  ></audio>
-  <audio src= "sonidos/" controls id="carta_2_a"  preload="auto" autoplay loop ></audio>
-  <audio src= "sonidos/" controls id="carta_3_a"  preload="auto" autoplay loop  ></audio>
- <div> 
-        </div>
-     
+    <label for="volume">Volumen general:</label>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+
+    
+    <script>
+        const volumeControl = document.getElementById('volume');
+        const carta1Audio = document.getElementById('carta_1_a');
+        const carta2Audio = document.getElementById('carta_2_a');
+        const carta3Audio = document.getElementById('carta_3_a');
+        const context = Tone.getContext();
+
+        // Configurar los volúmenes iniciales
+        carta1Audio.volume = volumeControl.value;
+        carta2Audio.volume = volumeControl.value;
+        carta3Audio.volume = volumeControl.value;
+
+    
+
+        // Actualizar el volumen general cuando se cambia el control deslizante
+        volumeControl.addEventListener('input', function (e) {
+            const volume = e.target.value;
+            carta1Audio.volume = volume;
+            carta2Audio.volume = volume;
+            carta3Audio.volume = volume;
+        });
+
+        // Iniciar el contexto de audio después de una acción del usuario
+        document.addEventListener('mousedown', () => {
+            if (context.state !== 'running') {
+                context.resume();
+            }
+        });
+    </script>
 </div>
+
 <div class="datos">
+    <input id="fecha" type="date" name="date">
+    <button class="btn" onclick="tirar()">Barajar</button>
+    
+
+    <div class="copy">
+        <img id="carta4_1" src="0.jpeg" alt="" name="dia_1">
+        <img id="carta4_2" src="0.jpeg" alt="" name="mes_2">
+        <img id="carta4_3" src="0.jpeg" alt="" name="año_2">
+    </div> 
 
 
-<input id ="fecha"type="date" name value="date">
-<button class="btn" onclick="tirar()">Listen</button>
+ 
+</div>
+
+</div>
+
+<section>
+
+</section>
+
 
 <div class="container">
 
-<img src="images/tarotwaves.jpg" width="800" height="450"  />
-<img src="images/tablawaves.jpg" width="650" height="450"   />
-
-
-</div>
-
-<div class="copy">
-
-   
-    <img id ="carta4_1"src="0.jpeg" alt=""name="dia_1">
-    <img id ="carta4_2"src="0.jpeg" alt=""name="mes_2">
-    <img id ="carta4_3"src="0.jpeg" alt=""name="año_2">
     
-   
-    <div class="container">
+<p class="container">
+   <h2>  <em> *"Unveil Your Destiny for Just $1 – Discover the Hidden Messages in the Cards Today!"*  <h1> 1 USD  </h1> </h2></em>
+</p>
+  
 
-    <p> <em> 
+<div class="container">
 
-   
-        The frequency tarot is an experience in deep listening, 
-        sonomeditation, randomness, additive synthesis and 
-        sonification.
-
-        Each septenary corresponds to a waveform.
-        you can control the volume of each sound and change the playback
-        speed to get variations.
-        <div>
-        Contact me for a personalized reading. 
-
-        
-
-    </em>
-</div>
-</div>
-        <div 
-        
-        class="container">
-
-        <A HREF="https://aprtlt.wixsite.com/aprtlt/info" target=”_blank” > 
-        
-        <em>Alfonso Pretelt</em> </A>
-
-    </em>
-    
-</div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="2486UXV7QH3CA" />
+    <table>
+      <tr>
+        <td>
+          <input type="hidden" name="on0" value="Name - Tarot Question"/>
+          Name - Tarot Question
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="os0" maxLength="200" />
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="currency_code" value="USD" />
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+  </form>
     
 
-<div class="formulario" id ="form">
-    
     <form action="https://formspree.io/f/xbjervwb" method="post">
         <label for="email">Email</label>
         
@@ -148,68 +171,49 @@
         <div> 
         <button type="submit" id="enviar">send</button>
 
-        </div>
-
         <div class="container">
 
+
+        <section>  
+
+        </section>
+        <div class="container">
+
+            <div class="row">
+              <div class="col-md-7">
+                
+            <p> <small>  Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</small></a></p>
+         
+        </container>
+        </div> <!-- Cierra el div container-fluid -->
+        <section>
+
+         
+        
+
         </div>
- 
-   
-</div>
-
-
-<script>
-    const socket = new WebSocket('ws://localhost:8080'); // Cambia la URL al servidor adecuado
-    
-    // Cuando el audio se reproduce, captura los datos y envíalos al servidor
-    document.getElementById('carta_1_a').addEventListener('play', (event) => {
-        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
-        socket.send(JSON.stringify(audioData));
-    });
-    
-    document.getElementById('carta_2_a').addEventListener('play', (event) => {
-        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
-        socket.send(JSON.stringify(audioData));
-    });
-    
-    document.getElementById('carta_3_a').addEventListener('play', (event) => {
-        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
-        socket.send(JSON.stringify(audioData));
-    });
-    </script>
-    
-
-
     <script>
+        const $form = document.querySelector('#form');
+        $form.addEventListener('submit', handleSubmit);
 
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const form = new FormData(this);
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: form,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
 
-const $form=document.querySelector('#form');
-$form.addEventListener('submit',handleSubmit);
-
-async function handleSubmit(event)
-    event.preventDefault();
-    const form= new FormData(this);
-    const response =await fetch(this.action,{
-        method:this.method,
-        body:form,
-        headers:{
-            "Accept": "aplication/jason"
+            if (response.ok) {
+                this.reset();
+                alert();
+            }
         }
-
-    })
-    if (response.ok){
-        this.reset()
-        alert()
-    }
-    
-
-  
-
-
-
-src="script.js"
-
     </script>
 </div>
+
 </body>
 </html>
