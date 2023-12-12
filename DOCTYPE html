@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
+    <script src="../lib/Tone.js"></script>
     <title>Tarot Synthesizer</title>
+    
 </head>
 <body>
   <header>
@@ -16,11 +18,37 @@
          
     </header>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+                // Si el usuario permite el uso del micrófono, aquí puedes realizar acciones con el stream obtenido.
+                console.log("Permiso concedido para usar el micrófono.");
+            } catch (error) {
+                // Si el usuario deniega el permiso o no tiene un micrófono, aquí puedes mostrar una alerta o realizar otras acciones.
+                console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
+            }
+        });
+    </script>
+
+
+<div>
+
+</div>
+
+
+
 <div class="container">
+
+    <p id="titulo">
+        <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
+        etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.  </p>
+
     <div class="cartas">
     <div id="labesl_cartas">
 
-    
    
 
     <div class="nombre_cartas">
@@ -36,24 +64,21 @@
 
     <div class="container"> 
 
-<div class="audio">
-
-  <audio  src="sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop  ></audio>
-  <audio src="sonidos/" controls id="carta_2_a"  preload="auto" autoplay loop ></audio>
-  <audio src="sonidos/" controls id="carta_3_a"  preload="auto" autoplay loop  ></audio>
- <div> 
+        
+    
 
   
-        <br>
-        <audio for="volume-control">Master Volume</audio><br>
-        <input type="range" id="volume-control"  min= "0" max="1" step="0.05" value="0.1"><br>
-         <label for="volume-control">Attack Time</label><br>
-        <input type="range" id="attack-control" min="0" max="0.5" step="0.05" value="0.3"><br>
-         <label for="volume-control">Release Time</label><br>
-        <input type="range" id="release-control" min="0" max="0.5" step="0.05" value="0.3">
-      
-        <button type="button" id="pause">pause</button>
+    
+    
+    
 
+<div class="audio">
+
+  <audio src= "sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop  ></audio>
+  <audio src= "sonidos/" controls id="carta_2_a"  preload="auto" autoplay loop ></audio>
+  <audio src= "sonidos/" controls id="carta_3_a"  preload="auto" autoplay loop  ></audio>
+ <div> 
+        </div>
      
 </div>
 <div class="datos">
@@ -65,7 +90,7 @@
 <div class="container">
 
 <img src="images/tarotwaves.jpg" width="800" height="450"  />
-<img src="images/tablawaves.jpg" width="550" height="450"   />
+<img src="images/tablawaves.jpg" width="650" height="450"   />
 
 
 </div>
@@ -80,24 +105,23 @@
    
     <div class="container">
 
-    <p> <em> <aling center> 
+    <p> <em> 
+
    
         The frequency tarot is an experience in deep listening, 
-        sonomeditation, randomness, additive synthesis and sonification. 
+        sonomeditation, randomness, additive synthesis and 
+        sonification.
+
         Each septenary corresponds to a waveform.
         you can control the volume of each sound and change the playback
-         speed to get variations.
-        
-        If you require a professional and personalized interpretation of the 
-        carts that have come out by putting your date of birth or any date, 
-        write me a message in the box below, do not forget to write down your
-         email next to the message, I will answer you soon. 
-        (it has a symbolic cost of 15 dollars. paypal) 
-        En Colombia:(30.000 pesos) Nequi Bancolombia o daviplata.
+        speed to get variations.
+        <div>
+        Contact me for a personalized reading. 
+
         
 
     </em>
-
+</div>
 </div>
         <div 
         
@@ -121,16 +145,39 @@
         <output type="text" name= "text" id="text" placeholder>
         <label for="msg">Consulta:</label>
         <textarea id="msg" name="user_message"></textarea>
-        <button type="submit" id="enviar">Enviar</button>
+        <div> 
+        <button type="submit" id="enviar">send</button>
 
         </div>
 
         <div class="container">
 
-
+        </div>
  
    
 </div>
+
+
+<script>
+    const socket = new WebSocket('ws://localhost:8080'); // Cambia la URL al servidor adecuado
+    
+    // Cuando el audio se reproduce, captura los datos y envíalos al servidor
+    document.getElementById('carta_1_a').addEventListener('play', (event) => {
+        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
+        socket.send(JSON.stringify(audioData));
+    });
+    
+    document.getElementById('carta_2_a').addEventListener('play', (event) => {
+        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
+        socket.send(JSON.stringify(audioData));
+    });
+    
+    document.getElementById('carta_3_a').addEventListener('play', (event) => {
+        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
+        socket.send(JSON.stringify(audioData));
+    });
+    </script>
+    
 
 
     <script>
