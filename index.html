@@ -18,7 +18,34 @@
          
     </header>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+                // Si el usuario permite el uso del micrófono, aquí puedes realizar acciones con el stream obtenido.
+                console.log("Permiso concedido para usar el micrófono.");
+            } catch (error) {
+                // Si el usuario deniega el permiso o no tiene un micrófono, aquí puedes mostrar una alerta o realizar otras acciones.
+                console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
+            }
+        });
+    </script>
+
+
+<div>
+
+</div>
+
+
+
 <div class="container">
+
+    <p id="titulo">
+        <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
+        etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.  </p>
+
     <div class="cartas">
     <div id="labesl_cartas">
 
@@ -37,11 +64,19 @@
 
     <div class="container"> 
 
+        
+    
+
+  
+    
+    
+    
+
 <div class="audio">
 
-  <audio  src="sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop  ></audio>
-  <audio src="sonidos/" controls id="carta_2_a"  preload="auto" autoplay loop ></audio>
-  <audio src="sonidos/" controls id="carta_3_a"  preload="auto" autoplay loop  ></audio>
+  <audio src= "sonidos/" controls id="carta_1_a"  preload="auto" autoplay loop  ></audio>
+  <audio src= "sonidos/" controls id="carta_2_a"  preload="auto" autoplay loop ></audio>
+  <audio src= "sonidos/" controls id="carta_3_a"  preload="auto" autoplay loop  ></audio>
  <div> 
         </div>
      
@@ -121,6 +156,28 @@
  
    
 </div>
+
+
+<script>
+    const socket = new WebSocket('ws://localhost:8080'); // Cambia la URL al servidor adecuado
+    
+    // Cuando el audio se reproduce, captura los datos y envíalos al servidor
+    document.getElementById('carta_1_a').addEventListener('play', (event) => {
+        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
+        socket.send(JSON.stringify(audioData));
+    });
+    
+    document.getElementById('carta_2_a').addEventListener('play', (event) => {
+        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
+        socket.send(JSON.stringify(audioData));
+    });
+    
+    document.getElementById('carta_3_a').addEventListener('play', (event) => {
+        const audioData = { type: 'audio', data: 'captura_de_audio_aqui' };
+        socket.send(JSON.stringify(audioData));
+    });
+    </script>
+    
 
 
     <script>
