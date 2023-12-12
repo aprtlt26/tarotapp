@@ -1,11 +1,14 @@
+
+
 body{
-    
-    
+    display:flex;
+    flex-direction: column;
+    margin:auto;
     text-align: center;
-    padding: auto;
-    margin: auto;
-    border: auto;
-    
+    padding: 50px;
+    align-items: center;
+    width: 1000px;
+    border: 0px;
     background:rgb(255, 255, 255) ;
     animation-name: animacion_video;
     animation-duration: 10s;
@@ -14,69 +17,11 @@ body{
     
 }
 
-video{
-position: absolute;
-   width: 1000px;
-    height: 1000px;
+
+
+
    
-    
-    animation-name: animacion_video;
-    animation-duration: infinite;
-    animation-iteration-count:infinite;
-    animation-direction: alternate;
-    
 
-}
-
-
-#titulo{
-    color: rgba(0, 0, 0, 0);
-    font-size: 30px;
-    margin-top: auto;
-    background: rgb(255, 255, 255);
-    
-}
-
-
-p{
-    
-    color: rgb(255, 255, 255);
-    margin-bottom:  25px;
-    margin-top: auto;
-    text-align: center;
-    
-
-}
-h1{
-    
-    display: flex;
-    /*! flex-flow: wrap; */
-    color: white;
-    /*! text-align: center; */
-
-    /*! font-size: 25px; */
-    /*! animation: alternate; */
-    /*! margin-left:60px; */
-    
-    text-align: center;
-}
-
-
-
-
-h3{
-    color: white;
-    font-size: 15px;
-    margin: 5px;
-}
-h2{
-    width: 100%;
-    margin-bottom:5px; 
-    text-align: center;
-    color: white;
-    border:1px solid white;
-    padding:10px;
-}
 
 #carta1,#carta2,#carta3,#carta4{
     width: 110px;
@@ -85,17 +30,12 @@ h2{
     margin: 2px;
 }
 
-
-    
-    
-
 .cartas{
-    margin-bottom: 15px;
-    display:inline;
+    margin-bottom: 20px;
+    display:flex;
     text-align: center;
     align-items: center;
-    
-        
+
 }
 
 /*/Animaciones*/
@@ -106,8 +46,6 @@ h2{
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;  
-    
-    
         
 }
 
@@ -127,10 +65,21 @@ h2{
 
 
 .copy{
-    
+    display: flex;
     height: 10px;
     text-align: center;
+    position: relative;
  
+}
+
+.mensaje {
+    display: inline;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
 }
 
 .btn:active{
@@ -153,22 +102,18 @@ label{
     border: 1px;
 }
 .datos{
-    margin: 5px;
-    border: 3px solid white;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
 }
 #fecha{
-    margin-top: 10px;
+    margin-top: 50px;
     width: 100px;
   
     
 }
-
 
 #labesl_cartas{
     display: flex;
@@ -178,7 +123,7 @@ label{
 }
 @keyframes animacion_carta{
     from{opacity: 0;}
-    to{opacity: 1;}
+    to{opacity: 0.5;}
     
     
 }
@@ -217,20 +162,19 @@ label{
     width: 10px;
 }
 
+
 .formulario{
     display: flex;
-    
     justify-content: center;
     align-content: center;
-    
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     justify-content: center;
     border-top: 1px solid rgb(255, 255, 255);
     text-align: center;
     
+    
 }
 form{
-    
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -251,7 +195,6 @@ form{
     text-align: center;
     margin: 5px;
     width: 100px;
-
     height: 15px;
     background-color: rgb(250, 250, 250);
     color: rgb(0, 0, 0)
@@ -266,9 +209,11 @@ form{
 }
 #enviar{
     align-items: center;
-    height: 30px;
+    text-align: center;
+    height: 20px;
     background-color: black;
     color: white;
+    position: relative;
 
 }
 #info_label{
@@ -276,19 +221,15 @@ form{
     border: solid rgb(0, 0, 0) 1px;
    
 }
-.audios{
-    width: 70px;
-    display:flex ;
-    flex-flow:nowrap;
-    align-items: center;
-    justify-content: space-between;
-   
-}
+
 audio{
+    display:flex;
    border: 1px solid white;
    background: rgba(255, 255, 255, 0);
    height: 9px;
-    
+   flex-direction: column;
+   align-items: center;
+   margin: auto;
     
 
 }
@@ -296,9 +237,13 @@ audio{
  
 
 .container{
+    display:block;
     max-width: 1400px;
     margin:auto;
+  
+    
 }
+
 
 header{
     padding: 25px 30px; 
@@ -306,8 +251,8 @@ header{
 }
 
 header .img{
-margin: 0;
-padding: 25px 30px;
+margin:auto;
+display: flex;
 
 
 }
@@ -316,6 +261,7 @@ header.container{
     display: flex;
     flex-direction:column;
     align-items: center;
+    direction: unset ;
     
 
     
@@ -335,23 +281,44 @@ p{
 }
 
 A{
-    display: flex;
+  
     text-align: center;
-    padding: auto;
-
-     height: 150px;
-     color: rgb(91, 91, 3);
+     color: rgb(103, 103, 15);
      font: 400;
      font-family:Verdana, Geneva, Tahoma, sans-serif ;
 
-
 }
 
-p{
+
+
+p{ 
+    display: flex;
     color: rgb(0, 0, 0);
-    border:0ch;
-   padding: auto;
-  text-align: justify;
+    border:-0;
+  font-size: small;
+
+}
+
+em{
+    width: 500px;
+
+}
+
+
+p.container{
+    display: flex 500px x 62px;
+
+   font-size:medium;
+   font-display:inherit;
+padding-top: 50px;
+width: 500px;
+
 
 
 }
+img.container{
+    align-items: center;}
+button {
+    background-color: rgb(255, 255, 255);
+    font-size: small;
+  }
