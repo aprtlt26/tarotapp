@@ -8,6 +8,41 @@
     <script src="https://unpkg.com/tone"></script>
     <script src="main.js"></script>
     <title>Tarot Synthetizer</title>
+
+        <meta name="keywords" content="deeplistening, alfonsopretelt,tarot,erosion, jodorowsky">
+    <meta name="author" content="alfonsopretelt">
+    <meta name="robots" content="index,">
+    <meta name="google" content="translate">
+    <meta property="og:image" content="tarotlog.png">
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <style>
+
+        .body{
+            color: #1c08fb;
+        }
+  .contact-button {
+            bottom: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            background-color: #1c08fb; 
+            color: #e0e0e0; 
+            text-decoration: none; 
+            border: none; 
+            border-radius: 5px;
+            font-size: 14px; 
+            cursor: pointer; 
+            
+        }
+       
+        .contact-button:hover {
+            background-color: #02f706;  }
+</style>
 </head>
 <body>
 
@@ -22,10 +57,8 @@
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
-                // Si el usuario permite el uso del micrófono, aquí puedes realizar acciones con el stream obtenido.
                 console.log("Permiso concedido para usar el micrófono.");
             } catch (error) {
-                // Si el usuario deniega el permiso o no tiene un micrófono, aquí puedes mostrar una alerta o realizar otras acciones.
                 console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
             }
         });
@@ -87,7 +120,6 @@
 
     
 
-        // Actualizar el volumen general cuando se cambia el control deslizante
         volumeControl.addEventListener('input', function (e) {
             const volume = e.target.value;
             carta1Audio.volume = volume;
@@ -95,7 +127,6 @@
             carta3Audio.volume = volume;
         });
 
-        // Iniciar el contexto de audio después de una acción del usuario
         document.addEventListener('mousedown', () => {
             if (context.state !== 'running') {
                 context.resume();
@@ -129,49 +160,26 @@
 <div class="container">
 
     
-<p class="container">
-    <em> *"Unveil Your Destiny for Just $1 – Discover the Hidden Messages in the Cards Today!"*  <h1> 1 USD  </h1></em>
-    </p>
-  <p 
-Unlock the unique magic within yourself through our interactive Tarot experience, an entirely innovative journey for just one dollar! Dive into the depths of your psyche with psycho-evolutive interpretations and precise answers to your most profound questions.
 
-Picture a connection beyond words: our Tarot utilizes sounds and frequencies linked to each card, delivering a "deep listening" experience that enhances the exploration of your inner self. Immerse yourself in a sensory journey that goes beyond sight and directly connects you with the essence of each card.
-
-Every dollar invested not only provides answers but a transformative experience. Discover the unique resonances of your energy as you navigate the mysterious path of your life. Magic is just a click away! 🔮🎶 #InnovativeTarot #DeepConnection </p>    
-
+  
 <div class="container">
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    <input type="hidden" name="cmd" value="_s-xclick" />
-    <input type="hidden" name="hosted_button_id" value="2486UXV7QH3CA" />
-    <table>
-      <tr>
-        <td>
-          <input type="hidden" name="on0" value="Name - Tarot Question"/>
-          Name - Tarot Question
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input type="text" name="os0" maxLength="200" />
-        </td>
-      </tr>
-    </table>
-    <input type="hidden" name="currency_code" value="USD" />
-    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-  </form>
+<img src="mapa.jpg" style="width: 600px;" alt="Imagen 1">
+
+<p class="container">
+
+    ​
+    
+    Tarot of frequencies, ranging from 100 hz to 2200 hz.
+    </p>
+<div class="container">
+
+<img src="tarofrec.png" style="height: 700px;" alt="">
+
+<a href="contact.html" class="contact-button" >Contact</a>
     
 
-    <form action="https://formspree.io/f/xbjervwb" method="post">
-        <label for="email">Email</label>
-        
-        <input type="email" name="email" id="email" placeholder= "aprtlt26@gmail.com">
-        <output type="text" name= "text" id="text" placeholder>
-        <label for="msg">Consulta:</label>
-        <textarea id="msg" name="user_message"></textarea>
-        <div> 
-        <button type="submit" id="enviar">send</button>
-
+   
         <div class="container">
 
 
@@ -186,7 +194,7 @@ Every dollar invested not only provides answers but a transformative experience.
             <p> <small>  Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</small></a></p>
          
         </container>
-        </div> <!-- Cierra el div container-fluid -->
+        </div> 
         <section>
 
          
@@ -218,3 +226,4 @@ Every dollar invested not only provides answers but a transformative experience.
 
 </body>
 </html>
+
