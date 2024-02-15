@@ -8,6 +8,17 @@
     <script src="https://unpkg.com/tone"></script>
     <script src="main.js"></script>
     <title>Tarot Synthetizer</title>
+    <meta name="keywords" content="deeplistening, alfonsopretelt,tarot,erosion, jodorowsky">
+    <meta name="author" content="alfonsopretelt">
+    <meta name="robots" content="index,">
+    <meta name="google" content="translate">
+    <meta property="og:image" content="tarotlog.png">
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
 
     <style>
 
@@ -18,13 +29,13 @@
             bottom: 20px;
             right: 20px;
             padding: 5px 10px;
-            background-color: #1c08fb; /* Color de fondo */
-            color: #e0e0e0; /* Color de texto */
-            text-decoration: none; /* Eliminar subrayado del texto */
-            border: none; /* Sin borde */
-            border-radius: 5px; /* Borde redondeado */
-            font-size: 14px; /* Tamaño de fuente */
-            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            background-color: #1c08fb;
+            color: #e0e0e0; 
+            text-decoration: none; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 14px; 
+            cursor: pointer; 
             
         }
        
@@ -45,10 +56,8 @@
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
-                // Si el usuario permite el uso del micrófono, aquí puedes realizar acciones con el stream obtenido.
                 console.log("Permiso concedido para usar el micrófono.");
             } catch (error) {
-                // Si el usuario deniega el permiso o no tiene un micrófono, aquí puedes mostrar una alerta o realizar otras acciones.
                 console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
             }
         });
@@ -110,7 +119,6 @@
 
     
 
-        // Actualizar el volumen general cuando se cambia el control deslizante
         volumeControl.addEventListener('input', function (e) {
             const volume = e.target.value;
             carta1Audio.volume = volume;
@@ -118,7 +126,6 @@
             carta3Audio.volume = volume;
         });
 
-        // Iniciar el contexto de audio después de una acción del usuario
         document.addEventListener('mousedown', () => {
             if (context.state !== 'running') {
                 context.resume();
@@ -186,7 +193,7 @@
             <p> <small>  Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</small></a></p>
          
         </container>
-        </div> <!-- Cierra el div container-fluid -->
+        </div> 
         <section>
 
          
