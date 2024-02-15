@@ -8,12 +8,13 @@
     <script src="https://unpkg.com/tone"></script>
     <script src="main.js"></script>
     <title>Tarot Synthetizer</title>
-
-        <meta name="keywords" content="deeplistening, alfonsopretelt,tarot,erosion, jodorowsky">
+    <meta name="keywords" content="deeplistening, alfonsopretelt,tarot,erosion, jodorowsky">
     <meta name="author" content="alfonsopretelt">
     <meta name="robots" content="index,">
     <meta name="google" content="translate">
     <meta property="og:image" content="tarotlog.png">
+
+
 
     <script>
         document.addEventListener('contextmenu', function (e) {
@@ -22,185 +23,180 @@
     </script>
 
     <style>
-
-        .body{
+        .body {
             color: #1c08fb;
         }
-  .contact-button {
+
+        .contact-button {
+            position: absolute;
             bottom: 20px;
             right: 20px;
             padding: 5px 10px;
-            background-color: #1c08fb; 
-            color: #e0e0e0; 
-            text-decoration: none; 
-            border: none; 
+            background-color: #1c08fb;
+            color: #e0e0e0;
+            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            font-size: 14px; 
-            cursor: pointer; 
-            
+            font-size: 14px;
+            cursor: pointer;
         }
-       
+
         .contact-button:hover {
-            background-color: #02f706;  }
-</style>
+            background-color: #02f706;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .navbar a {
+            color: #1c08fb;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar a:hover {
+            color: #02f706;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .container img {
+            margin: 10px 0;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container">
-              <img  src="images/TAROTLISTENING.jpg" width="400" height="100" /> 
-              
-        </header>
-  
-    <script>
-        document.addEventListener("DOMContentLoaded", async function () {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+<header>
+    <a href="index.html">
+        <img src="log.jpg" alt="Tu imagen" style=" width: 75px; height: auto; margin-right: 10px;" >
+    </a>
+    <div class="container">
+        <img src="images/TAROTLISTENING.jpg" alt="Tarot Listening" />
+    </div>
+</header>
 
-                console.log("Permiso concedido para usar el micrófono.");
-            } catch (error) {
-                console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
-            }
-        });
-    </script>
+<nav class="navbar">
+    <a href="arteypsique.html">Arte & Psique</a>
+    
+    <a href="Contact.html">Contacto</a>
+</nav>
 
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
+            console.log("Permiso concedido para usar el micrófono.");
+        } catch (error) {
+            console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
+        }
+    });
+</script>
 
+<div class="container">
+    <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
+etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.</em> </p>
 
+    <section></section>
 
+    <div></div>
+
+    <div class="cartas">
+        <div id="labesl_cartas"></div>
+        <div class="nombre_cartas">
+            <div class="container"></div>
+            <img id="carta3" src="0.jpeg" alt="" name="dia">
+            <img id="carta2" src="0.jpeg" alt="" name="mes">
+            <img id="carta1" src="0.jpeg" alt="" name="año">
+        </div>
+
+        <div class="audio">
+            <audio src="sonidos" controls id="carta_1_a" preload="auto" autoplay loop></audio>
+            <audio src="sonidos" controls id="carta_2_a" preload="auto" autoplay loop></audio>
+            <audio src="sonidos" controls id="carta_3_a" preload="auto" autoplay loop></audio>
+
+            <label for="volume">Volumen general:</label>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+
+            <script>
+                const volumeControl = document.getElementById('volume');
+                const carta1Audio = document.getElementById('carta_1_a');
+                const carta2Audio = document.getElementById('carta_2_a');
+                const carta3Audio = document.getElementById('carta_3_a');
+                const context = Tone.getContext();
+
+                // Configurar los volúmenes iniciales
+                carta1Audio.volume = volumeControl.value;
+                carta2Audio.volume = volumeControl.value;
+                carta3Audio.volume = volumeControl.value;
+
+                // Actualizar el volumen general cuando se cambia el control deslizante
+                volumeControl.addEventListener('input', function (e) {
+                    const volume = e.target.value;
+                    carta1Audio.volume = volume;
+                    carta2Audio.volume = volume;
+                    carta3Audio.volume = volume;
+                });
+
+                // Iniciar el contexto de audio después de una acción del usuario
+                document.addEventListener('mousedown', () => {
+                    if (context.state !== 'running') {
+                        context.resume();
+                    }
+                });
+            </script>
+        </div>
+
+        <div class="datos">
+            <input id="fecha" type="date" name="date">
+            <button class="btn" onclick="tirar()">Barajar</button>
+
+            <div class="copy">
+                <img id="carta4_1" src="0.jpeg" alt="" name="dia_1">
+                <img id="carta4_2" src="0.jpeg" alt="" name="mes_2">
+                <img id="carta4_3" src="0.jpeg" alt="" name="año_2">
+            </div>
+        </div>
+    </div>
+
+    <section></section>
+
+    <div></div>
 
     <div class="container">
-        <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
-    etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.  </p>
+        <img src="mapa.jpg" style="max-width: 100%;" alt="Imagen 1">
 
-   
-    <section>
+        <p class="container">Tarot of frequencies, ranging from 100 hz to 2200 hz.</p>
 
-    </section>
-
-
-        <div>
-
+        <div class="container">
+            <img src="tarofrec.png" style="max-height: 700px; width: auto;" alt="">
         </div>
 
-
-
-<div class="cartas">
-    <div id="labesl_cartas">
-    </div>
-    <div class="nombre_cartas">
         <div class="container">
-
-    </div>
-    <img id="carta3" src="0.jpeg" alt="" name="dia"> 
-    <img id="carta2" src="0.jpeg" alt="" name="mes">
-    <img id="carta1" src="0.jpeg" alt="" name="año">
-</div>
-
-<div class="audio">
-    <audio src="sonidos" controls  id="carta_1_a" preload="auto" autoplay loop ></audio>
-    <audio src="sonidos" controls id="carta_2_a" preload="auto" autoplay loop></audio>
-    <audio src="sonidos" controls id="carta_3_a" preload="auto" autoplay loop ></audio>
-
-    <label for="volume">Volumen general:</label>
-    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
-
-    
-    <script>
-        const volumeControl = document.getElementById('volume');
-        const carta1Audio = document.getElementById('carta_1_a');
-        const carta2Audio = document.getElementById('carta_2_a');
-        const carta3Audio = document.getElementById('carta_3_a');
-        const context = Tone.getContext();
-
-        // Configurar los volúmenes iniciales
-        carta1Audio.volume = volumeControl.value;
-        carta2Audio.volume = volumeControl.value;
-        carta3Audio.volume = volumeControl.value;
-
-    
-
-        volumeControl.addEventListener('input', function (e) {
-            const volume = e.target.value;
-            carta1Audio.volume = volume;
-            carta2Audio.volume = volume;
-            carta3Audio.volume = volume;
-        });
-
-        document.addEventListener('mousedown', () => {
-            if (context.state !== 'running') {
-                context.resume();
-            }
-        });
-    </script>
-</div>
-
-<div class="datos">
-    <input id="fecha" type="date" name="date">
-    <button class="btn" onclick="tirar()">Barajar</button>
-    
-
-    <div class="copy">
-        <img id="carta4_1" src="0.jpeg" alt="" name="dia_1">
-        <img id="carta4_2" src="0.jpeg" alt="" name="mes_2">
-        <img id="carta4_3" src="0.jpeg" alt="" name="año_2">
-    </div> 
-
-
- 
-</div>
-
-</div>
-
-<section>
-
-</section>
-
-
-<div class="container">
-
-    
-
-  
-<div class="container">
-
-<img src="mapa.jpg" style="width: 600px;" alt="Imagen 1">
-
-<p class="container">
-
-    ​
-    
-    Tarot of frequencies, ranging from 100 hz to 2200 hz.
-    </p>
-<div class="container">
-
-<img src="tarofrec.png" style="height: 700px;" alt="">
-
-<a href="contact.html" class="contact-button" >Contact</a>
-    
-
-   
-        <div class="container">
-
-
-        <section>  
-
-        </section>
-        <div class="container">
+            <section></section>
 
             <div class="row">
-              <div class="col-md-7">
-                
-            <p> <small>  Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</small></a></p>
-         
-        </container>
-        </div> 
-        <section>
-
-         
-        
-
+                <div class="col-md-7">
+                    <p><small>Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
+                </div>
+            </div>
         </div>
+    </div>
+
     <script>
         const $form = document.querySelector('#form');
         $form.addEventListener('submit', handleSubmit);
@@ -222,8 +218,6 @@
             }
         }
     </script>
-</div>
-
 </body>
 </html>
 
