@@ -84,8 +84,8 @@
         function changeBackgroundVideo() {
             var randomIndex = Math.floor(Math.random() * videos.length);
             var img = document.getElementById('background-img');
-            video.src = videos[randomIndex];
-            video.load();
+            img.src = videos[randomIndex];
+            img.load();
         }
 
         // Llamar a la función cuando se carga la página
