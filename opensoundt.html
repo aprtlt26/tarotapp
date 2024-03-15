@@ -67,9 +67,9 @@
     <!-- Contenedor del video -->
     
             <div id="video-container">
-                <video autoplay muted loop id="background-video">
+                <img id="background-img">
                     Tu navegador no soporta la etiqueta de video.
-                </video>
+                </img>
             </div>
     </div>
 
@@ -78,12 +78,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         // No necesitas un arreglo de videos si solo vas a usar uno, pero aquí está el código ajustado por si acaso
-        var videos = ['bar.mp4' ,'bgcat.mp4']; // Asegúrate de que el camino al video es correcto
+        var img = ['max gif' ,'bar.gif']; // Asegúrate de que el camino al video es correcto
 
         // Función para seleccionar un video aleatorio y establecerlo como fuente del video de fondo
         function changeBackgroundVideo() {
             var randomIndex = Math.floor(Math.random() * videos.length);
-            var video = document.getElementById('background-video');
+            var img = document.getElementById('background-img');
             video.src = videos[randomIndex];
             video.load();
         }
