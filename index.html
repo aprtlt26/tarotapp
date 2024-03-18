@@ -44,30 +44,8 @@
 
 
 
-onAuthStateChanged(auth, user => {
-document.getElementById('loading').style.display = 'none';
-if (user) {
-document.body.style.display = "block";
-} else {
-window.location.href = 'https://soundtarot.com/index.html';
-}
-});
 
 
-
-    const logoutButton = document.getElementById('logout-btn');
-
-    logoutButton.addEventListener('click', () => {
-        const auth = getAuth();
-        signOut(auth).then(() => {
-            // Cierre de sesión exitoso
-            console.log('Usuario ha cerrado sesión');
-            window.location.href = 'https://arteypsique.com'; // Redirecciona a la página de inicio de sesión o a donde prefieras
-        }).catch((error) => {
-            // Ha ocurrido un error
-            console.error('Error al cerrar sesión', error);
-        });
-    });
 });
 
 </script>
@@ -100,13 +78,9 @@ window.location.href = 'https://soundtarot.com/index.html';
         </header>
 
 
-        <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: rgb(255, 255, 255); color: rgb(0, 255, 21); z-index: 1000;">
-            Cargando...
-        <img src="collagetarot.gif" alt="">        </div>
-       
-        <div>
+        
 
-        </div>
+        
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130621743704423"
      crossorigin="anonymous"></script>
