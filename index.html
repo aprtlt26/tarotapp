@@ -32,38 +32,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
-    // Configuración de Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyARA9tqBfkiFK80XcaWtS1ar6yglfmEh3g",
-authDomain: "artepsique-9ced7.firebaseapp.com",
-projectId: "artepsique-9ced7",
-storageBucket: "artepsique-9ced7.appspot.com",
-messagingSenderId: "269569252943",
-appId: "1:269569252943:web:b185a96dee1ff30ab2d43a"
-    };
-    document.addEventListener('DOMContentLoaded', () => {
-
-    // Inicializa Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-        onAuthStateChanged(auth, user => {
-if (user) {
-    // Si el usuario está autenticado, muestra el contenido de la página
-    document.body.style.display = "block";
-    // Aquí puedes incluir más lógica, como cargar datos del usuario, etc.
-} else {
-    // Si el usuario no está autenticado, redirige a la página de login
-    window.location.href = 'https://arteypsique.com/';
-}
-});
    
-
+<script
 
         
   document.addEventListener('contextmenu', function(e) {
