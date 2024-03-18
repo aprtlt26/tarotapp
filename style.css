@@ -392,7 +392,7 @@ flex-direction: column;
     flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
     gap: 20px; /* Proporciona un espacio entre los contenedores para evitar que se toquen */
     margin-bottom: 20px; /* Proporciona un margen debajo para separación con otros elementos */
-width: 50%;
+width: 100%;
 }
 
 /* Aplica estilos específicos para ajustar los controles de volumen y velocidad */
