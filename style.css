@@ -1,40 +1,312 @@
 
-
-body{
-    display:flex;
-    flex-direction: column;
-    margin:auto;
-    text-align: center;
-    padding: 50px;
-    align-items: center;
-    width: 1000px;
-    border: 0px;
-    background:rgb(255, 255, 255) ;
-    animation-name: animacion_video;
-    animation-duration: 10s;
-    animation-iteration-count:initial;
-    animation-direction: alternate;
+       
+body {
     
-}
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+        text-align: center;
+        align-items: center;
+        font-family: "Anta", sans-serif;
+        background-color: #223bff;
+        min-height: 100vh; /* Establece la altura mínima del cuerpo al 100% del viewport */
+    
+    }
 
 
+    #header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        left: 0;
+        z-index: 1050; /* Eleva el z-index para que esté sobre otros elementos */
+        position: fixed;
+    
+    
+    }
+    
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        padding-top: 130px; /* Ajusta el espacio superior según sea necesario */
+        margin: auto; /* Centra horizontalmente */
+        width: 50%; /* Ocupa todo el ancho disponible */
+        max-width: 500px; /* Establece un ancho máximo */
+        text-align: center;
+        
+    }
+
+    
+    #volumen{
+        display:block;
+        flex-direction: row;
+    }
+
+    #velocidad{
+
+        display:block;
+        flex-direction:column;
+    }
+    
+    /* Ajustes para dispositivos pequeños (menos de 768px) */
+    @media (max-width: 768px) {
+       
+        
+        .navbar-toggler {
+            margin: 0 auto; /* Centra el botón del menú */
+        }
+    
+        .navbar-nav {
+            text-align: center;
+        }
+    
+        footer {
+            padding: 10px 20px; /* Ajuste de padding para el footer */
+            font-size: 14px; /* Tamaño de texto adecuado para lectura */
+        }
+    }
+    
+    /* Ajustes para tabletas (entre 768px y 1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+    
+    }
+    
+    /* Estilos adicionales para mejorar la accesibilidad y la interacción */
+    .nav-link, .navbar-brand, footer a {
+        touch-action: manipulation; /* Mejora la respuesta táctil en dispositivos móviles */
+    }
+    
+    .hover-word:hover, .word-hover:hover, #menu-links a:hover, #logout-btn:hover, footer a:hover {
+        color: #3bc0ac; /* Cambia el color al hacer hover para mejorar la interactividad */
+    }
+    
+    
+                 .anta-regular {
+      font-family: "Anta", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+         
+    
+
+    
+    
+           
+
+    
+    
+              .navbar-collapse {
+                background-color: transparent;
+                border: 2px dashed  #e0fb9a
+    
+            }
+    
+            .navbar-collapse .navbar-nav .nav-link {
+                padding: 15px 0; 
+            }
+    
+            .navbar-collapse .navbar-nav .nav-link:last-child {
+                border-bottom: none; 
+            }
+    
+            
+            @media screen and (max-width: 576px) {
+        .navbar-nav {
+            font-size: 0.9rem;
+            margin: 10px 15px;
+            width: 80%; /* Hace que la barra de menú use todo el ancho disponible */
+            text-align: center; /* Centra el texto de los enlaces */
+    align-items: center;
+    background-color:  transparent;
+    
+        }
+    
+        .navbar {
+            width: 80%; /* Asegura que el elemento navbar también ocupe todo el ancho */
+            text-align: center; /* Centra el texto de los enlaces */
+            background-color:  transparent;
+            border-radius: 5px;
+
+            
+        }
+    
+        .navbar-collapse {
+            width: 80%; /* Hace que el contenido colapsable de la navbar ocupe todo el ancho */
+            text-align: center; /* Centra el texto de los enlaces */
+            background-color:  transparent;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px dashed  #e0fb9a;
+            border-radius: 5px;
+
+    
+        }
+    
+        .navbar-toggler {
+            margin-right: 0; /* Elimina el margen derecho para alinear el toggler a la derecha */
+            text-align: center; /* Centra el texto de los enlaces */
+    ;
+    
+        }
+    
+        .navbar-nav .nav-link {
+            text-align: center; /* Centra el texto de los enlaces */
+        }
+    }
+    
+    
+    
+            #menu-links a {
+                color: #767676; 
+                text-decoration: none;
+                margin: 0 20px; 
+                background-color:  transparent;
+    
+            }
+    
+            #menu-links a:hover {
+             border: 2px dashed  #c4d49c      
+              }
+    
+            #header img {
+                width: 75px;
+                height: auto;
+                margin-right: 10px;
+            }
+    
+            img[src="Capa%2031@3x.png"] {
+                display: none;
+            }
+    
+            .section {
+                padding: 20px; 
+                text-align: center;
+            }
+    
+            /* Estilos para la barra de menú */
+    .navbar {
+        background-color: transparent !important; /* Hace la barra de menú transparente */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    }
+    
+    /* Estilos para el menú desplegable en versión móvil */
+    .navbar-collapse {
+        background-color: transparent; /* Semi-transparente con sombra */
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Sombra más notoria */
+        border-radius: 5px;
 
 
-   
+    }
+    
+    /* Ajusta la transparencia del botón del menú desplegable para mejor coherencia visual */
+    .navbar-toggler {
+        background-color: transparent; /* Semi-transparente */
+        border-color: rgba(255, 255, 255, 0.5); /* Ajusta el color del borde del botón */
+    }
+ 
+    
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: #ffffff !important; /* Cambia el color del texto a blanco */
+    }
+    
+    /* Estilos adicionales para mejorar la legibilidad */
+    .navbar-brand:hover,
+    .navbar-nav .nav-link:hover {
+        color: #afff3e !important; /* Cambia el color del texto a blanco al hacer hover */
+    }
+    
+    /* Cambia el color del botón del menú desplegable en dispositivos móviles */
+    .navbar-toggler-icon {
+        background-color: #ffffff !important; /* Cambia el color del botón a blanco */
+    }
+    
+    /* Cambia el color del botón del menú desplegable al hacer hover */
+    .navbar-toggler-icon:hover {
+        background-color: #ffffff !important; /* Cambia el color del botón a blanco al hacer hover */
+    }
+    
+    
+    
+    /* Ajustes para dispositivos móviles */
+
+    
+    #text-container:hover{
+        color: #3bc0ac;
+    }
+    
+    
+    
+    
+    #logout-btn{
+        color: gray;
+        background-color: transparent;
+        border: none;
+    
+    }
+    #logout-btn:hover{
+        border: 2px dashed  #c4d49c
+    }
+    
+    footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent; /* Color de fondo del footer */
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); /* Sombra suave (opcional) */
+        color: rgb(103, 103, 103); /* Color del texto */
+        text-align: center; /* Centra el texto horizontalmente */
+        padding: 5px 0; /* Añade un poco de espacio dentro del footer */
+        padding-top: 50px;
+        margin-top: 100px;
+    }
+    
+    footer a {
+        color: #c4c3c3; /* Color de los enlaces */
+        text-decoration: none; /* Elimina el subrayado de los enlaces */
+        
+    }
+    
+    footer a:hover {
+    color: #00f7b5;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    
+    }
+    
+
+    .word-hover:hover {
+        color: #75fa00; /* Cambia el color al pasar el mouse */
+        cursor: pointer;
+        /* Agrega aquí más estilos si necesitas */
+    }
+
+
 
 
 #carta1,#carta2,#carta3,#carta4{
-    width: 110px;
-    height: 180px;
-    border: 5px solid white;
+    width: 100px;
+    height: 170px;
     margin: 2px;
+    border: 2px dashed #c2ff8f; /* Borde personalizado */
+    text-align: center;
+    align-items: center;
+    
 }
 
 .cartas{
-    margin-bottom: 20px;
-    display:flex;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;  
     text-align: center;
     align-items: center;
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+
 
 }
 
@@ -72,15 +344,7 @@ body{
  
 }
 
-.mensaje {
-    display: inline;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    position: relative;
 
-}
 
 .btn:active{
 
@@ -99,10 +363,9 @@ button{
 label{
     color: white;
     margin: 5px;
-    border: 1px;
+    border-style: dashed  rgb(190, 255, 117) ;
 }
 .datos{
-    border: 1px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,13 +374,15 @@ label{
 #fecha{
     margin-top: 50px;
     width: 100px;
+    border: 2px dashed #c2ff8f; /* Borde personalizado */
+    background-color: rgb(170, 125, 212);
   
     
 }
 
 #labesl_cartas{
     display: flex;
-    border: 1px solid white;
+    align-items: center;
     justify-content: space-around;
     
 }
@@ -149,9 +414,6 @@ label{
     animation-name: animacion_carta;
     animation-duration: 2s;
  
-    
-    
- 
    
 }
 .barajas{
@@ -163,140 +425,104 @@ label{
 }
 
 
-.formulario{
+/* Estilos para el control de audio */
+audio {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-bottom: 20px;
-    justify-content: center;
-    border-top: 1px solid rgb(255, 255, 255);
-    text-align: center;
+    width: 10%; /* Ajusta el ancho del control de audio */
+    margin-top: 10px; /* Margen superior para separar del contenido superior */
+    height: 5px;
+    background-color: transparent; /* Color de fondo del control */
+
+}
+
+
+/* Estilos para el control de volumen */
+input[type="range"] {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada */
+    appearance: none;
+    width: 80%; /* Ajusta el ancho del control */
+    height: 10px; /* Ajusta la altura del control */
+    background-color: transparent;
+        border-radius: 10px; /* Ajusta el radio de borde para que tenga esquinas redondeadas */
+    outline: none; /* Elimina el contorno predeterminado */
+    margin-top: 5px; /* Añade un margen superior para separar del contenido superior */
+}
+
+/* Estilos para la barra de volumen */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada */
+    appearance: none;
+    width: 20px; /* Ancho del botón del control deslizante */
+    height: 20px; /* Altura del botón del control deslizante */
+    background: #ffffff; /* Color de fondo del botón */
+    border-radius: 50%; /* Hace que el botón tenga forma circular */
     
-    
-}
-form{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 5 2px rgba(0, 0, 0, 0.4); /* Agrega una sombra suave al botón */
 }
 
-
-#info{
-    width: 120px;
-    height: 10px;
-    margin: 5px;
-    color: rgb(0, 0, 0);
-    margin-top: 100px;
-
-}
-#email{
-    text-align: center;
-    margin: 5px;
-    width: 100px;
-    height: 15px;
-    background-color: rgb(250, 250, 250);
-    color: rgb(0, 0, 0)
-
-}
-#info{
-    align-items: center;
-    text-align: center;
-    width: 150px;
-    background-color: black;
-    color: rgb(0, 0, 0)
-}
-#enviar{
-    align-items: center;
-    text-align: center;
-    height: 20px;
-    background-color: black;
-    color: white;
-    position: relative;
-
-}
-#info_label{
-    
-    border: solid rgb(0, 0, 0) 1px;
-   
+/* Estilos para el rango de volumen en diferentes navegadores */
+input[type="range"]::-moz-range-thumb {
+    width: 20px; /* Ancho del botón del control deslizante */
+    height: 20px; /* Altura del botón del control deslizante */
+    background: transparent; /* Color de fondo del control */
+    border-radius: 50%; /* Hace que el botón tenga forma circular */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0  2px rgba(0, 0, 0, 0.4); /* Agrega una sombra suave al botón */
 }
 
-audio{
-    display:flex;
-   border: 1px solid white;
-   background: rgba(255, 255, 255, 0);
-   height: 9px;
-   flex-direction: column;
-   align-items: center;
-   margin: auto;
-    
-
+/* Estilos adicionales para el rango de volumen en Firefox */
+input[type="range"]::-moz-range-track {
+    background: #f0f0f0; /* Color de fondo de la barra de volumen */
+    border-radius: 5px; /* Ajusta el radio de borde para que tenga esquinas redondeadas */
 }
 
- 
+/* Estilos adicionales para el rango de volumen en Chrome, Safari y Edge */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #f0f0f0; /* Color de fondo de la barra de volumen */
+    border-radius: 5px; /* Ajusta el radio de borde para que tenga esquinas redondeadas */
 
-.container{
-    display:block;
-    max-width: 1400px;
-    margin:auto;
-  
-    
+}
+/* Estilos para la barra de progreso de reproducción */
+audio::-webkit-media-controls-panel {
+    background-color: transparent; /* Hace que el fondo de la barra de progreso sea transparente */
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: transparent; /* Cambia el color del texto de tiempo actual y tiempo restante */
+}
+
+/* Estilos para la barra de progreso de reproducción */
+audio::-webkit-media-controls-timeline {
+    height: 5px; /* Ajusta la altura de la barra de progreso */
+    background: transparent; /* Color de fondo del control */
+}
+
+/* Estilos para el botón de progreso de reproducción */
+audio::-webkit-media-controls-play-button {
+    color: #ffffff; /* Cambia el color del botón de reproducción */
+}
+
+/* Estilos para el botón de volumen */
+audio::-webkit-media-controls-volume-slider {
+    height: 5px; /* Ajusta la altura del control deslizante de volumen */
+    background-color: #ffffff; /* Cambia el color de fondo del control deslizante de volumen */
+}
+
+/* Estilos para el botón de volumen */
+audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+    background-color: #ffffff; /* Cambia el color del botón de control deslizante de volumen */
 }
 
 
-header{
-    padding: 25px 30px; 
-
-}
-
-header .img{
-margin:auto;
-display: flex;
 
 
-}
-header.container{
-
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    direction: unset ;
-    
-
-    
-
-}
-
-p{
-    border: 1px solid rgb(0, 0, 0);
-    width: 100%;
-}
 .nombre_cartas{
-    border: 1px solid rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     align-content: center;
     margin-top: 10px;
-}
-
-A{
-  
-    text-align: center;
-     color: rgb(103, 103, 15);
-     font: 400;
-     font-family:Verdana, Geneva, Tahoma, sans-serif ;
-
-}
-
-
-
-p{ 
-    display: flex;
-    color: rgb(0, 0, 0);
-    border:-0;
-  font-size: small;
-
 }
 
 em{
@@ -305,20 +531,144 @@ em{
 }
 
 
-p.container{
-    display: flex 500px x 62px;
-
-   font-size:medium;
-   font-display:inherit;
-padding-top: 50px;
-width: 500px;
 
 
 
-}
 img.container{
     align-items: center;}
 button {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(104, 97, 201);
     font-size: small;
   }
+
+     
+  #text-container {
+    display: flex;
+   color: #fffdfd;
+font-size:xx-small;
+font-family: "Anta";
+max-width: 40%; /* Ajusta el ancho máximo según tus preferencias */
+    margin: 5px auto; /* Centra el contenedor horizontalmente y agrega un margen en la parte superior e inferior */
+    padding: 5px; /* Agrega un relleno para separar el texto del borde */
+    background-color: transparent; /* Color de fondo */
+    border: 1px dashed #c6f895; /* Borde del contenedor */
+    border-radius: 10px; /* Borde redondeado */
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        margin: 0 auto;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        flex-direction: column; /* Alinea verticalmente los enlaces en el menú desplegable */
+    }
+
+    .content-container .cartas {
+        flex-direction: column;
+        padding-top: 120px; /* Ajusta según el alto de tu header */
+    }
+    
+    .nombre_cartas, #labesl_cartas {
+        flex-direction: column;
+        gap: 10px; /* Espacio entre las cartas para dispositivos pequeños */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Ajustes específicos para pantallas muy pequeñas */
+    .content-container, .cartas {
+        padding-top: 100px; /* Ajusta según el alto de tu header */
+    }
+}
+.nombre_cartas {
+    border: none; /* Elimina el borde */
+}
+
+/* Estilos generales para los contenedores */
+
+
+/* Contenedor padre que sostiene los contenedores de volumen y velocidad */
+#controles {
+    display: flex;
+    justify-content: space-around; /* Asegura un espacio equitativo entre los contenedores */
+    align-items: flex-start; /* Alinea los elementos al comienzo de su contenedor */
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+    gap: 20px; /* Proporciona un espacio entre los contenedores para evitar que se toquen */
+    margin-bottom: 20px; /* Proporciona un margen debajo para separación con otros elementos */
+}
+
+/* Aplica estilos específicos para ajustar los controles de volumen y velocidad */
+input[type="range"], label {
+    width: 100%; /* Asegura que la barra de rango y etiquetas ocupen todo el ancho del contenedor */
+    display: block; /* Hace que cada elemento ocupe su propia línea */
+}
+
+label {
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas para separación */
+    text-align: left; /* Alinea el texto de las etiquetas a la izquierda */
+}
+
+/* Estilo para el contenedor 'generales' para que ocupe el ancho máximo */
+#generales {
+    width: 90%; /* Ajusta el ancho según necesites */
+    margin: 20px auto; /* Centra el contenedor 'generales' horizontalmente y añade margen arriba y abajo */
+    padding: 15px; /* Relleno interno */
+}
+
+/* Estilos generales para las etiquetas */
+label {
+    display: block; /* Asegura que la etiqueta ocupe su propia línea */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+    color: transparent; /* Color del texto de la etiqueta */
+    font-family: 'Anta', sans-serif; /* Fuente personalizada */
+}
+
+/* Estilos para el texto interactivo al pasar el cursor */
+.hover-text {
+    color: transparen; /* Color inicial del texto */
+    cursor: pointer; /* Cambia el cursor a 'pointer' para indicar interactividad */
+    transition: color 0.3s ease; /* Transición suave del color */
+}
+
+.hover-text:hover {
+    color:#d6d6d6; /* Cambia el color al pasar el cursor */
+}
+
+/* Estilos para el input de rango */
+input[type="range"] {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada en WebKit/Blink */
+    margin: 10px 0; /* Margen superior e inferior */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    background: transparent; /* Fondo transparente */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada */
+    border: 1px solid #ffffff; /* Borde del control deslizante */
+    height: 20px; /* Altura del control deslizante */
+    width: 20px; /* Ancho del control deslizante */
+    border-radius: 50%; /* Forma circular */
+    background: #ffffff; /* Color de fondo */
+    cursor: pointer; /* Cursor como puntero */
+    transition: background 0.3s ease; /* Transición suave del fondo */
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #7b7b7b; /* Color de fondo al pasar el cursor */
+    border-color: #ffffff;
+
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 5px; /* Altura de la pista */
+    background-color:#d6d6d6; /* Color de fondo de la pista */
+    border-radius: 5px; /* Borde redondeado */
+    border-color: #ffffff;
+}
