@@ -11,6 +11,7 @@
     <meta name="robots" content="collage">
     <meta name="google" content="translate">
     <meta property="og:image" content="log.png">
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -86,9 +87,66 @@
 <section></section>
 
 <div></div>
+<div class="content-container">
 
-    <div class="content-container">
 
+        <div id="center-typewriter-text" style="font-family: monospace; white-space: pre;"></div>
+
+        <script>
+            function centerTypeWriter(text, elementId, speed) {
+              const elem = document.getElementById(elementId);
+              let leftIndex = 5; // Comienza desde el inicio del texto
+              let rightIndex = text.length - 1; // Comienza desde el final del texto
+              elem.innerHTML = "\xA0"; // Espacio no rompible como punto de inicio para mantener el formato
+              
+              function typing() {
+                if (leftIndex <= rightIndex) {
+                  // Coloca los caracteres desde los extremos hacia el centro
+                  elem.innerHTML = text.substring(0, leftIndex + 1) 
+                                  + "\xA0".repeat(rightIndex - leftIndex - 1) 
+                                  + text.substring(rightIndex, text.length);
+                  leftIndex++;
+                  rightIndex--;
+                  setTimeout(typing, speed);
+                }
+              }
+            
+              typing();
+            }
+            
+
+            // Ejemplo de uso
+            const textToType = `
+  
+
+░▒▓████████▓▒░  ░▒▓██████▓▒░  ░▒▓███████▓▒░   ░▒▓██████▓▒░  ░▒▓████████▓▒░       
+   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░           
+   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░           
+   ░▒▓█▓▒░     ░▒▓████████▓▒░ ░▒▓███████▓▒░  ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░           
+   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░           
+   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░           
+   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓██████▓▒░     ░▒▓█▓▒░           
+                                                                                 
+                                                                                 
+      ░▒▓████████▓▒░  ░▒▓██████▓▒░                                               
+      ░▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░                                              
+      ░▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░                                              
+      ░▒▓██████▓▒░   ░▒▓█▓▒░░▒▓█▓▒░                                              
+      ░▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░                                              
+      ░▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░                                              
+      ░▒▓█▓▒░         ░▒▓██████▓▒░                                               
+                        ░▒▓█▓▒░                                                  
+                         ░▒▓██▓▒░                                                
+
+                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                              
+        `; // Inserta tu texto aquí
+            const typingSpeed = 2; // Velocidad en milisegundos
+            
+            document.addEventListener("DOMContentLoaded", () => {
+              centerTypeWriter(textToType, "center-typewriter-text", typingSpeed);
+            });
+            </script>
 
 </script>
 
@@ -98,7 +156,6 @@
     <div id="labesl_cartas">
     </div>
     <div class="nombre_cartas">
-        <div class="container">
 
     </div>
     <img id="carta3" src="5wUu.gif" alt="" name="dia"> 
@@ -118,8 +175,13 @@
     </div> 
 </div> 
 
-<div class="container">
 
+
+
+                                                                                                                                   
+        
+
+        <div class="container" id="controles">
 <div class="audio">
     <audio src="sonidos" controls  id="carta_1_a" preload="auto" autoplay loop > </audio>
    
@@ -163,11 +225,9 @@
     <label for="speed"><span class="hover-text">Variación de velocidad general</span></label>
     <input type="range" id="speed" min="0.5" max="3.0" step="0.1" value="1.0" />
     
-
+</div>
    
 </div>
-
-
 
 
 
@@ -260,6 +320,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 
 </script>
+ 
+   
+    
 
     </body>
        
