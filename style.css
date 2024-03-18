@@ -10,7 +10,6 @@ body, html {
     min-height: 100vh;
     font-family: 'Anta', sans-serif;
     background-color: #223bff;
-    overflow-x: hidden; /* Evita desbordamiento horizontal */
     color: #c4c3c3;
 }
 
