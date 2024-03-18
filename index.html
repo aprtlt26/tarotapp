@@ -97,13 +97,13 @@
               const elem = document.getElementById(elementId);
               let leftIndex = 5; // Comienza desde el inicio del texto
               let rightIndex = text.length - 1; // Comienza desde el final del texto
-              elem.innerHTML = "\xA0"; // Espacio no rompible como punto de inicio para mantener el formato
+              elem.innerHTML = "\xA5"; // Espacio no rompible como punto de inicio para mantener el formato
               
               function typing() {
                 if (leftIndex <= rightIndex) {
                   // Coloca los caracteres desde los extremos hacia el centro
                   elem.innerHTML = text.substring(0, leftIndex + 1) 
-                                  + "\xA0".repeat(rightIndex - leftIndex - 1) 
+                                  + "\xA5".repeat(rightIndex - leftIndex - 1) 
                                   + text.substring(rightIndex, text.length);
                   leftIndex++;
                   rightIndex--;
@@ -141,7 +141,7 @@
                                                                                                                                                                                                                                                                               
                                                                                                                                                                                                                                                                               
         `; // Inserta tu texto aquí
-            const typingSpeed = 2; // Velocidad en milisegundos
+            const typingSpeed = 1; // Velocidad en milisegundos
             
             document.addEventListener("DOMContentLoaded", () => {
               centerTypeWriter(textToType, "center-typewriter-text", typingSpeed);
