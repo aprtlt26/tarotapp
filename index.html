@@ -13,18 +13,10 @@
     <meta property="og:image" content="log.png">
     
 
-
-    <!-- Asegúrate de que jQuery se carga primero -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 
-    <!-- Luego, incluye Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-
-    <!-- Y finalmente, los scripts de Bootstrap -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 
     <title>ART & PSYCHE</title>
@@ -98,34 +90,33 @@
 <div class="content-container">
 
 
-        <div id="center-typewriter-text" style="font-family: monospace; white-space: pre;"></div>
+       <div id="center-typewriter-text" style="font-family: monospace; white-space: pre;"></div>
 
-        <script>
-            function centerTypeWriter(text, elementId, speed) {
-              const elem = document.getElementById(elementId);
-              let leftIndex = 5; // Comienza desde el inicio del texto
-              let rightIndex = text.length - 1; // Comienza desde el final del texto
-              elem.innerHTML = "\xA5"; // Espacio no rompible como punto de inicio para mantener el formato
-              
-              function typing() {
-                if (leftIndex <= rightIndex) {
-                  // Coloca los caracteres desde los extremos hacia el centro
-                  elem.innerHTML = text.substring(0, leftIndex + 1) 
-                                  + "\xA5".repeat(rightIndex - leftIndex - 1) 
-                                  + text.substring(rightIndex, text.length);
-                  leftIndex++;
-                  rightIndex--;
-                  setTimeout(typing, speed);
-                }
-              }
-            
-              typing();
-            }
-            
+<script>
+function centerTypeWriter(text, elementId, speed) {
+  const elem = document.getElementById(elementId);
+  let leftIndex = 0; // Iniciar desde el principio del texto
+  let rightIndex = text.length - 1; // Iniciar desde el final del texto
+  elem.innerHTML = ""; // Iniciar con el contenedor vacío
 
-            // Ejemplo de uso
-            const textToType = `
-  
+  function typing() {
+    if (leftIndex <= rightIndex) {
+      // Colocar los caracteres desde los extremos hacia el centro
+      elem.innerHTML = text.substring(0, leftIndex + 1)
+                      + " ".repeat(rightIndex - leftIndex - 1) // Usar espacio en blanco
+                      + text.substring(rightIndex, text.length);
+      leftIndex++;
+      rightIndex--;
+      setTimeout(typing, speed);
+    }
+  }
+
+  typing();
+}
+
+// Ejemplo de uso
+const textToType = `
+
 
 ░▒▓████████▓▒░  ░▒▓██████▓▒░  ░▒▓███████▓▒░   ░▒▓██████▓▒░  ░▒▓████████▓▒░       
    ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░           
@@ -144,17 +135,19 @@
       ░▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░                                              
       ░▒▓█▓▒░         ░▒▓██████▓▒░                                               
                         ░▒▓█▓▒░                                                  
-                         ░▒▓██▓▒░                                                
+                          
+                         
+                         
+                         `
+                         
+                         ;
+const typingSpeed = 1; // Velocidad en milisegundos
 
-                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                              
-        `; // Inserta tu texto aquí
-            const typingSpeed = 1; // Velocidad en milisegundos
-            
-            document.addEventListener("DOMContentLoaded", () => {
-              centerTypeWriter(textToType, "center-typewriter-text", typingSpeed);
-            });
-            </script>
+document.addEventListener("DOMContentLoaded", () => {
+  centerTypeWriter(textToType, "center-typewriter-text", typingSpeed);
+});
+</script>
+
 
 </script>
 
