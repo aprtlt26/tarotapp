@@ -1,4 +1,5 @@
 /* Estilos Base y Generales */
+/* Estilos Base y Generales */
 body, html {
     margin: 0;
     padding: 0;
@@ -251,13 +252,15 @@ margin: 50px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #7d7070;
 }
 #fecha{
     margin-top: 50px;
     width: 150px;
     border: 2px dashed #c2ff8f; /* Borde personalizado */
     background-color: rgb(170, 125, 212);
-  
+    color: #dedede;
+
     
 }
 @keyframes animacion_carta{
@@ -476,11 +479,7 @@ text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
 
 
-.word-hover:hover {
-    color: #75fa00; /* Cambia el color al pasar el mouse */
-    cursor: pointer;
-    /* Agrega aquí más estilos si necesitas */
-}
+
  /* Estilos para la barra de menú */
  .navbar {
     background-color: transparent !important; /* Hace la barra de menú transparente */
@@ -530,22 +529,10 @@ text-decoration: none; /* Elimina el subrayado de los enlaces */
 /* Ajustes para dispositivos móviles */
 
 
-#text-container:hover{
-    color: #3bc0ac;
-}
 
 
 
 
-#logout-btn{
-    color: gray;
-    background-color: transparent;
-    border: none;
-
-}
-#logout-btn:hover{
-    border: 2px dashed  #c4d49c
-}
 
  
     /* Ajustes para dispositivos pequeños (menos de 768px) */
@@ -588,6 +575,7 @@ text-decoration: none; /* Elimina el subrayado de los enlaces */
     }
     
          
+
     
 
     
@@ -667,3 +655,36 @@ text-decoration: none; /* Elimina el subrayado de los enlaces */
             #menu-links a:hover {
              border: 2px dashed  #c4d49c      
               }
+
+          /* Estilos para centrar y mejorar la apariencia de los span con clase hover-text */
+.hover-text {
+    font-size: x-small;
+    display: block; /* Cambia el display a block para permitir el centrado */
+    width: 100%; /* Ocupa todo el ancho del contenedor padre para centrar el texto */
+    text-align: center; /* Alinea el texto al centro */
+    margin: 2px 0; /* Añade margen arriba y abajo para separación */
+    color: transparent; /* Ajusta el color del texto según necesites */
+    cursor: pointer; /* Indica que el elemento es interactivo */
+    transition: color 0.2s ease; /* Transición suave para el cambio de color */
+}
+
+/* Mejora la respuesta al interactuar con el elemento */
+.hover-text:hover {
+    color: #ccff49; /* Cambia el color al hacer hover para mejorar la interactividad */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 576px) {
+    .hover-text {
+        font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    }
+}
+
+.btn{
+    color: #c4c3c3;
+    border: 2px dashed  #e0fb9a
+}
+.btn:hover{
+    color: #e0fb9a;
+     }
+
