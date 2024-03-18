@@ -2,138 +2,291 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/tone"></script>
-    <script src="main.js"></script>
-    <title>Tarot Synthetizer</title>
-    <meta name="keywords" content="deeplistening, alfonsopretelt,tarot,erosion, jodorowsky">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Alfonso Pretelt Artista">
+    <meta name="keywords" content="collage, alfonsopretelt,tarot,erosion,">
     <meta name="author" content="alfonsopretelt">
-    <meta name="robots" content="index,">
+    <meta name="robots" content="collage">
     <meta name="google" content="translate">
-    <meta property="og:image" content="tarotlog.png">
+    <meta property="og:image" content="log.png">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+
+    <title>ART & PSYCHE</title>
+    
+
+  
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+
+<script src="https://unpkg.com/tone"></script>
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+    // Configuración de Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyARA9tqBfkiFK80XcaWtS1ar6yglfmEh3g",
+authDomain: "artepsique-9ced7.firebaseapp.com",
+projectId: "artepsique-9ced7",
+storageBucket: "artepsique-9ced7.appspot.com",
+messagingSenderId: "269569252943",
+appId: "1:269569252943:web:b185a96dee1ff30ab2d43a"
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // Inicializa Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+        onAuthStateChanged(auth, user => {
+if (user) {
+    // Si el usuario está autenticado, muestra el contenido de la página
+    document.body.style.display = "block";
+    // Aquí puedes incluir más lógica, como cargar datos del usuario, etc.
+} else {
+    // Si el usuario no está autenticado, redirige a la página de login
+    window.location.href = 'index.html';
+}
+});
+   
+
+
+        
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('El clic derecho está desactivado en esta página.');
+  }, false);
 
 
 
-    <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
+
+
+onAuthStateChanged(auth, user => {
+document.getElementById('loading').style.display = 'none';
+if (user) {
+document.body.style.display = "block";
+} else {
+window.location.href = 'index.html';
+}
+});
+
+
+
+    const logoutButton = document.getElementById('logout-btn');
+
+    logoutButton.addEventListener('click', () => {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            // Cierre de sesión exitoso
+            console.log('Usuario ha cerrado sesión');
+            window.location.href = 'https://arteypsique.com'; // Redirecciona a la página de inicio de sesión o a donde prefieras
+        }).catch((error) => {
+            // Ha ocurrido un error
+            console.error('Error al cerrar sesión', error);
         });
-    </script>
+    });
+});
 
-    <style>
-        .body {
-            color: #1c08fb;
-        }
-
-        .contact-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 5px 10px;
-            background-color: #1c08fb;
-            color: #e0e0e0;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .contact-button:hover {
-            background-color: #02f706;
-        }
-
-        .navbar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .navbar a {
-            color: #1c08fb;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .navbar a:hover {
-            color: #02f706;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        .container img {
-            margin: 10px 0;
-        }
-    </style>
+</script>
 </head>
 
 <body>
 
-<header>
-    <a href="index.html">
-        <img src="log.jpg" alt="Tu imagen" style=" width: 75px; height: auto; margin-right: 10px;" >
-    </a>
-    <div class="container">
-        <img src="images/TAROTLISTENING.jpg" alt="Tarot Listening" />
-    </div>
-</header>
+    <header id="header">
 
-<nav class="navbar">
-    <a href="https://arteypsique.com/">Arte & Psique</a>
-    
-    <a href="Contact.html">Contacto</a>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="about.html">ARTE & PSIQUE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div id="menu-links" class="navbar-nav">
+                    <a class="nav-link" href="Aprendizaje.html">Curso</a>
+                    
+<a class="nav-link" href="collage.html">Collage</a>
+<a class="nav-link" href="contact.html">Contact</a>
 
-<script>
-    document.addEventListener("DOMContentLoaded", async function () {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+<button id="logout-btn">Cerrar Sesión</button>
 
-            console.log("Permiso concedido para usar el micrófono.");
-        } catch (error) {
-            console.error("El permiso para usar el micrófono fue denegado o no hay un micrófono disponible.");
-        }
-    });
-</script>
+                </div>
+            </nav>
 
-<div class="container">
-    <p> <em>Select the specific date you want, it can be today's date, or the date of your birth, the date of your marriage, 
-etc. You will get 3 sound frequencies for meditation, dance, performance or simply deep listening.</em> </p>
 
-    <section></section>
 
-    <div></div>
+        </header>
 
-    <div class="cartas">
-        <div id="labesl_cartas"></div>
-        <div class="nombre_cartas">
-            <div class="container"></div>
-            <img id="carta3" src="0.jpeg" alt="" name="dia">
-            <img id="carta2" src="0.jpeg" alt="" name="mes">
-            <img id="carta1" src="0.jpeg" alt="" name="año">
+
+        <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: rgb(255, 255, 255); color: rgb(0, 255, 21); z-index: 1000;">
+            Cargando...
+        <img src="collagetarot.gif" alt="">        </div>
+       
+        <div>
+
         </div>
 
-        <div class="audio">
-            <audio src="sonidos" controls id="carta_1_a" preload="auto" autoplay loop></audio>
-            <audio src="sonidos" controls id="carta_2_a" preload="auto" autoplay loop></audio>
-            <audio src="sonidos" controls id="carta_3_a" preload="auto" autoplay loop></audio>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130621743704423"
+     crossorigin="anonymous"></script>
 
-            <label for="volume">Volumen general:</label>
-            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+    
+    
 
-            <script>
-                const volumeControl = document.getElementById('volume');
+    
+
+
+<section></section>
+
+<div></div>
+
+    <div class="content-container">
+
+
+</script>
+
+
+
+<div class="cartas">
+    <div id="labesl_cartas">
+    </div>
+    <div class="nombre_cartas">
+        <div class="container">
+
+    </div>
+    <img id="carta3" src="0.jpeg" alt="" name="dia"> 
+    <img id="carta2" src="0.jpeg" alt="" name="mes">
+    <img id="carta1" src="0.jpeg" alt="" name="año">
+</div>
+
+<div class="datos">
+    <input id="fecha" type="date" name="date">
+    <button class="btn" onclick="tirar()">Barajar</button>
+    
+
+    <div class="copy">
+        <img id="carta4_1" src="0.jpeg" alt="" name="dia_1">
+        <img id="carta4_2" src="0.jpeg" alt="" name="mes_2">
+        <img id="carta4_3" src="0.jpeg" alt="" name="año_2">
+    </div> 
+</div> 
+
+<div class="container">
+
+<div class="audio">
+    <audio src="sonidos" controls  id="carta_1_a" preload="auto" autoplay loop > </audio>
+   
+    <audio src="sonidos" controls id="carta_2_a" preload="auto" autoplay loop></audio>
+    <audio src="sonidos" controls id="carta_3_a" preload="auto" autoplay loop ></audio>
+
+    <div class="container" id="volumen">
+
+        <label for="volume1"><span class="hover-text">V audio Carta 1</span></label>
+    <input type="range" id="volume1" min="0" max="1" step="0.01" value="0.5" />
+    
+    <label for="volume2"><span class="hover-text">V audio Carta 2</span></label>
+    <input type="range" id="volume2" min="0" max="1" step="0.01" value="0.5" />
+    
+    <label for="volume3"><span class="hover-text">V audio Carta 3</span></label>
+    <input type="range" id="volume3" min="0" max="1" step="0.01" value="0.5" />
+    
+        </div class="container"  >
+
+    <div class="container" id="velocidad">
+
+        <div class="container">
+            <label for="speed1"><span class="hover-text">Velocidad audio Carta 1</span></label>
+            <input type="range" id="speed1" min="0.5" max="2.0" step="0.1" value="1.0" />
+        </div>
+        
+    <label for="speed2"><span class="hover-text">Velocidad audio Carta 2</span></label>
+    <input type="range" id="speed2" min="0.5" max="2.0" step="0.1" value="1.0" />
+    
+    <label for="speed3"><span class="hover-text">Velocidad audio Carta 3</span></label>
+    <input type="range" id="speed3" min="0.5" max="2.0" step="0.1" value="1.0" />
+    </div class="container">
+
+   
+
+
+<div class="container" id="generales" >
+    <label for="volume"><span class="hover-text">Volumen General</span></label>
+    <input type="range" id="volume" min="0" max="1.5" step="0.01" value="0.5" />
+
+    <label for="speed"><span class="hover-text">Variación de velocidad general</span></label>
+    <input type="range" id="speed" min="0.5" max="3.0" step="0.1" value="1.0" />
+    
+
+   
+</div>
+
+
+
+
+
+
+</container>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const volumeControl1 = document.getElementById('volume1');
+    const volumeControl2 = document.getElementById('volume2');
+    const volumeControl3 = document.getElementById('volume3');
+    
+    // Establece el volumen inicial de cada audio según el valor de los controles deslizantes
+    carta1Audio.volume = volumeControl1.value;
+    carta2Audio.volume = volumeControl2.value;
+    carta3Audio.volume = volumeControl3.value;
+
+    // Eventos para actualizar el volumen de cada audio cuando se cambian los controles deslizantes
+    volumeControl1.addEventListener('input', function() {
+        carta1Audio.volume = this.value;
+    });
+    
+    volumeControl2.addEventListener('input', function() {
+        carta2Audio.volume = this.value;
+    });
+    
+    volumeControl3.addEventListener('input', function() {
+        carta3Audio.volume = this.value;
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const speedControl1 = document.getElementById('speed1');
+    const speedControl2 = document.getElementById('speed2');
+    const speedControl3 = document.getElementById('speed3');
+    
+    // Funciones para actualizar la velocidad de reproducción de cada audio
+    speedControl1.addEventListener('input', function() {
+        carta1Audio.playbackRate = this.value;
+    });
+    
+    speedControl2.addEventListener('input', function() {
+        carta2Audio.playbackRate = this.value;
+    });
+    
+    speedControl3.addEventListener('input', function() {
+        carta3Audio.playbackRate = this.value;
+    });
+});
+
+    const volumeControl = document.getElementById('volume');
                 const carta1Audio = document.getElementById('carta_1_a');
                 const carta2Audio = document.getElementById('carta_2_a');
                 const carta3Audio = document.getElementById('carta_3_a');
@@ -152,72 +305,31 @@ etc. You will get 3 sound frequencies for meditation, dance, performance or simp
                     carta3Audio.volume = volume;
                 });
 
-                // Iniciar el contexto de audio después de una acción del usuario
-                document.addEventListener('mousedown', () => {
-                    if (context.state !== 'running') {
-                        context.resume();
-                    }
-                });
-            </script>
-        </div>
+                document.addEventListener('DOMContentLoaded', () => {
+    const speedControl = document.getElementById('speed');
+    
+    // Función para actualizar la velocidad de reproducción de los audios
+    function updatePlaybackSpeed() {
+        const speed = speedControl.value;
+        carta1Audio.playbackRate = speed;
+        carta2Audio.playbackRate = speed;
+        carta3Audio.playbackRate = speed;
+    }
+    
+    // Evento para actualizar la velocidad cuando se cambia el valor del control deslizante
+    speedControl.addEventListener('input', updatePlaybackSpeed);
 
-        <div class="datos">
-            <input id="fecha" type="date" name="date">
-            <button class="btn" onclick="tirar()">Barajar</button>
+    // Actualizar inicialmente la velocidad según el valor predeterminado del control deslizante
+    updatePlaybackSpeed();
+});
 
-            <div class="copy">
-                <img id="carta4_1" src="0.jpeg" alt="" name="dia_1">
-                <img id="carta4_2" src="0.jpeg" alt="" name="mes_2">
-                <img id="carta4_3" src="0.jpeg" alt="" name="año_2">
-            </div>
-        </div>
-    </div>
+                
+</script>
 
-    <section></section>
+    </body>
+       
+</div> <!-- Cierra el div container-fluid -->
+<footer> Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</small></a></p></footer>
 
-    <div></div>
-
-    <div class="container">
-        <img src="mapa.jpg" style="max-width: 60%;" alt="Imagen 1">
-
-        <p class="container">Tarot of frequencies, ranging from 100 hz to 2200 hz.</p>
-
-        <div class="container">
-            <img src="tarofrec.png" style="max-height: 100%; 
-                alt="">
-        </div>
-
-        <div class="container">
-            <section></section>
-
-            <div class="row">
-                <div class="col-md-7">
-                    <p><small>Desing and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const $form = document.querySelector('#form');
-        $form.addEventListener('submit', handleSubmit);
-
-        async function handleSubmit(event) {
-            event.preventDefault();
-            const form = new FormData(this);
-            const response = await fetch(this.action, {
-                method: this.method,
-                body: form,
-                headers: {
-                    "Accept": "application/json"
-                }
-            });
-
-            if (response.ok) {
-                this.reset();
-                alert();
-            }
-        }
-    </script>
-</body>
-</html>
+</div>
+    </html>
